@@ -1,0 +1,110 @@
+---
+console.log("header");
+import Image from "astro/components/Image.astro";
+import CovaSvgWhite from "../../images/logo-cova-white.svg";
+---
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <Image src={CovaSvgWhite} alt="CoVacations" class="logo" />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="menu">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+            </button>
+            <!-- Offcanvas Lateral Menu -->
+            <div
+                class="offcanvas offcanvas-end rounded-start show"
+                tabindex="-1"
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+            >
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title text-secondary" id="offcanvasNavbarLabel">
+                        Menu
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body p-0">
+                    <p class="text-secondary p-3">Explorá las secciones para comenzar con tu experiencia</p>
+                    <ul class="navbar-nav justify-content-end flex-grow-1">
+                        <li class="nav-item position-relative border-bottom active">
+                            <a class="px-4 nav-link" aria-current="page" href="/">
+                                <h5 class="my-2 text-decoration-underline">Inicio</h5>
+                                <p class="px-3 mb-2 text-secondary">¿Quiénes somos y qué ofrecemos?</p>
+                            </a>
+                        </li>
+                        <li class="nav-item position-relative border-bottom">
+                            <a class="px-4 nav-link" aria-current="page" href="/destinos">
+                                <h5 class="my-2 text-decoration-underline">Destinos</h5>
+                                <p class="px-3 mb-2 text-secondary">Lugares y experiencias inolvidables</p>
+                            </a>
+                        </li>
+                        <li class="nav-item position-relative border-bottom">
+                            <a class="px-4 nav-link" aria-current="page" href="/propietarios">
+                                <h5 class="my-2 text-decoration-underline">Propietarios</h5>
+                                <p class="px-3 mb-2 text-secondary">Sumá tu alojamiento</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="offcanvas-footer">
+                    <p class="px-4 text-secondary">© 2024 CoVacations Group.</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    header .navbar {
+        min-height: 7rem;
+    }
+	header .navbar .logo {
+		width: 70px;
+		height: auto;
+	}
+    header .navbar .menu {
+		width: 35px;
+		height: auto;
+	}
+    header .navbar .navbar-toggler {
+        border: none;
+        color: var(--white);
+    }
+    header .navbar .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav .nav-item.active {
+        background-color: var(--lt-green);
+    }
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav .nav-item.active::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: .4rem;
+        height: 100%;
+        background-color: var(--green);
+    }
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav a:hover {
+        background-color: var(--lt-green);
+    }
+    .offcanvas-footer p {
+        font-size: smaller;
+    }
+</style>

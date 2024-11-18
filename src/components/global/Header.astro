@@ -7,7 +7,7 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <Image src={CovaSvgWhite} alt="CoVacations" class="logo" />
             </a>
             <button
@@ -24,7 +24,7 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
             </button>
             <!-- Offcanvas Lateral Menu -->
             <div
-                class="offcanvas offcanvas-end rounded-start show"
+                class="offcanvas offcanvas-end rounded-start"
                 tabindex="-1"
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
@@ -71,6 +71,10 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
 </header>
 
 <style>
+    header {
+        /* background-color: var(--black); */
+        background-color: transparent;
+    }
     header .navbar {
         min-height: 7rem;
     }
@@ -86,7 +90,8 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
         border: none;
         color: var(--white);
     }
-    header .navbar .navbar-toggler:focus {
+    header .navbar .navbar-toggler:focus,
+    header .navbar .offcanvas .offcanvas-header button.btn-close:focus {
         box-shadow: none;
     }
     header .navbar .offcanvas .offcanvas-body ul.navbar-nav .nav-item.active {

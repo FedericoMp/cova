@@ -1,10 +1,9 @@
 ---
-console.log("header");
 import Image from "astro/components/Image.astro";
 import CovaSvgWhite from "../../images/logo-cova-white.svg";
 ---
 
-<header>
+<header class="black-bg">
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
@@ -72,8 +71,10 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
 
 <style>
     header {
-        /* background-color: var(--black); */
         background-color: transparent;
+    }
+    header.black-bg {
+        background-color: var(--black);
     }
     header .navbar {
         min-height: 7rem;

@@ -7,10 +7,10 @@ const { title } = Astro.props;
 
 // Supports weights 100-900
 import '@fontsource-variable/inter';
-// Regular + font-weight: 300;
-import '@fontsource/poppins/300.css';
-// Medium + font-weight: 400;
+// Regular + font-weight: 400;
 import '@fontsource/poppins/400.css';
+// Medium + font-weight: 500;
+import '@fontsource/poppins/500.css';
 // Bold + font-weight: 600;
 import '@fontsource/poppins/600.css';
 
@@ -37,6 +37,7 @@ import Footer from '../components/global/Footer.astro';
 	</body>
 </html>
 <style is:global>
+	/* Global styles */
 	:root {
 		--white: rgb(255, 255, 255);
 		--lt-grey: rgb(251, 251, 251);
@@ -63,10 +64,47 @@ import Footer from '../components/global/Footer.astro';
 		);
 	}
 	html, body {
+		font-weight: 400;
 		font-family: var(--ff-systemui)!important;
 		font-family: var(--ff-inter)!important;
 	}
 	button:focus, input:focus, textarea:focus {
         box-shadow: none!important;
     }
+
+	/* Font styles */
+	.font-inter {
+		font-weight: 400;
+		font-family: var(--ff-inter)!important;
+	}
+	.font-inter-bold {
+		font-weight: 700;
+		font-family: var(--ff-inter)!important;
+	}
+	.font-poppins {
+		font-weight: 400;
+		font-family: var(--ff-poppins)!important;
+	}
+	.font-poppins-med {
+		font-weight: 500;
+		font-family: var(--ff-poppins)!important;
+	}
+	.font-poppins-bold {
+		font-weight: 600;
+		font-family: var(--ff-poppins)!important;
+	}
+
+	/* Widths styles */
+	.w75,
+	.w50 {
+		width: 100%;
+	}
+	@media screen and (min-width: 992px) {
+		.w75 {
+			width: 75%;
+		}
+		.w50 {
+			width: 50%;
+		}
+	}
 </style>

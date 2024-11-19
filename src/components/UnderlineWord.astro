@@ -1,0 +1,33 @@
+---
+const { word, isGreen } = Astro.props;
+---
+
+<span class="font-poppins-med position-relative">
+	<span class="position-relative z-1">
+		{word}
+	</span>
+	<svg
+		width="182"
+		height="10"
+		viewBox="0 0 182 10"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		class="position-absolute start-0 bottom-0 w-100"
+		class:list={["underline-color", { green: isGreen }]}
+	>
+		<path
+			d="M2.00826 8.25427C45.3965 3.66439 141.721 -2.81237 179.911 7.99954"
+			stroke="currentColor"
+			stroke-width="3"
+			stroke-linecap="round"></path>
+	</svg>
+</span>
+
+<style>
+	.underline-color {
+		color: var(--st-orange);
+	}
+	.underline-color.green {
+		color: var(--st-green);
+	}
+</style>

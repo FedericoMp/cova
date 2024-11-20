@@ -1,0 +1,218 @@
+---
+import UnderlineWord from "./UnderlineWord.astro";
+import Image from "astro/components/Image.astro";
+import MarketImg from "../images/market.webp";
+import RateImg from "../images/rate.webp";
+---
+
+<section class="presentation">
+	<div class="container-960 px-4 py-5">
+		<h2
+			class="pb-2 font-poppins position-relative title-underline text-center title m-auto"
+		>
+			<UnderlineWord word="Multidestino" isGreen={true} isLg={true} />
+			con <span class="font-poppins-med">administración</span> hotelera
+		</h2>
+		<p class="text-center w75 mt-4 m-auto">
+			Con un equipo de trabajo altamente capacitado para gestionar y
+			maximizar la rentabilidad de tu inmueble, especializado en
+			management de apart hoteles, hoteles boutique, cabañas y alquileres
+			temporarios.
+		</p>
+		<!-- Grid -->
+		<div
+			class="cards-grid row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"
+		>
+			<!-- Col 1 -->
+			<div class="col">
+				<div
+					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative"
+					style="background-image: url('https://images.unsplash.com/photo-1681505504714-4ded1bc247e7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+				>
+					<div
+						class="d-flex flex-column px-4 pt-4 pb-5 text-white text-shadow-1 z-1"
+					>
+						<p class="pb-5 mb-5">
+							Estandar de excelencia en gestión
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- Col 2 -->
+			<div class="col">
+				<div
+					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative card-mb-gutter"
+				>
+					<Image
+						src={MarketImg}
+						alt="Asegurar ingresos recurrentes"
+						class="position-absolute market-img"
+					/>
+					<div
+						class="d-flex flex-column justify-content-center align-items-center px-4 py-5 text-white text-shadow-1 z-1"
+					>
+						<h5 class="py-4 my-4 text-center">
+							Asegurar ingresos recurrentes
+						</h5>
+					</div>
+				</div>
+				<div
+					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative green-bg card-height"
+					style="background-image: url('https://images.unsplash.com/photo-1478860409698-8707f313ee8b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="position-absolute map-svg"
+					>
+						<path
+							fill-rule="evenodd"
+							d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+							clip-rule="evenodd"></path>
+					</svg>
+					<div
+						class="d-flex flex-column flex-fill justify-content-end px-4 responsive-container-space text-white text-shadow-1 z-1"
+					>
+						<p class="responsive-text-space">
+							Gestión de propiedades
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- Col 3 -->
+			<div class="col">
+				<div
+					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative card-mb-gutter"
+					style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+				>
+					<div
+						class="d-flex flex-column px-4 pt-4 pb-5 text-white text-shadow-1 z-1"
+					>
+						<p class="pb-5 mb-5">
+							Encontrar inquilinos<br
+								class="d-none d-lg-block"
+							/>confiables
+						</p>
+					</div>
+				</div>
+				<div
+					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative"
+					style="background-image: url('https://images.unsplash.com/photo-1629878165379-3a5bafe1df63?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+				>
+					<Image
+						src={RateImg}
+						alt="Gestión de propiedades"
+						class="position-absolute rate-img"
+					/>
+					<div
+						class="d-flex flex-column px-4 pt-4 pb-5 text-white text-shadow-1 z-1"
+					>
+						<p class="pb-5 mb-5">
+							Compromiso de maximizar la rentabilidad
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.presentation h2.title {
+		width: 50%;
+	}
+	.presentation .container-960 {
+		margin: 0 auto;
+		max-width: 960px;
+	}
+	.presentation .cards-grid .card-cover {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.presentation .cards-grid .card-cover .responsive-container-space {
+		padding-bottom: 1.5rem;
+		padding-top: 3rem;
+	}
+	.presentation
+		.cards-grid
+		.card-cover
+		.responsive-container-space
+		.responsive-text-space {
+		padding-bottom: 0rem;
+		margin-bottom: 0rem;
+		padding-top: 3rem;
+		margin-top: 3rem;
+	}
+	.presentation .cards-grid .card-cover::before {
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		content: "";
+		opacity: 0.6;
+		height: 100%;
+		position: absolute;
+		background: var(--black);
+	}
+	.presentation .cards-grid .card-cover.green-bg::before {
+		background-color: var(--green);
+	}
+	.presentation .cards-grid .card-cover.card-height {
+		min-height: 250px;
+	}
+	.presentation .cards-grid .card-mb-gutter {
+		margin-bottom: var(--bs-gutter-y);
+	}
+	.presentation .cards-grid .card-cover .map-svg {
+		width: 50px;
+		height: 50px;
+		left: 20px;
+		top: 20px;
+		bottom: unset;
+		right: unset;
+		fill: var(--black);
+	}
+	.presentation .cards-grid .card-cover .market-img {
+		right: 0px;
+		bottom: 0px;
+		width: 100%;
+		height: 100%;
+		opacity: 0.2;
+	}
+	.presentation .cards-grid .card-cover .rate-img {
+		width: 101px;
+		height: 32px;
+		bottom: 20px;
+		right: 20px;
+	}
+	@media screen and (max-width: 991px) {
+		.presentation h2.title {
+			width: 100%;
+		}
+		.presentation .cards-grid .card-cover .responsive-container-space {
+			padding-bottom: 3rem;
+			padding-top: 1.5rem;
+		}
+		.presentation .cards-grid .card-cover.card-height {
+			min-height: auto;
+		}
+		.presentation
+			.cards-grid
+			.card-cover
+			.responsive-container-space
+			.responsive-text-space {
+			padding-bottom: 3rem;
+			margin-bottom: 3rem;
+			padding-top: 0rem;
+			margin-top: 0rem;
+		}
+		.presentation .cards-grid .card-cover .map-svg {
+			left: unset;
+			top: unset;
+			bottom: 20px;
+			right: 20px;
+		}
+	}
+</style>

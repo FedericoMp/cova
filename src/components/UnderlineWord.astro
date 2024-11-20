@@ -1,26 +1,59 @@
 ---
-const { word, isGreen } = Astro.props;
+interface Props {
+	word: string,
+	isGreen?: boolean,
+	isLg?: boolean,
+}
+
+const { word, isGreen, isLg } = Astro.props;
 ---
 
 <span class="font-poppins-med position-relative">
 	<span class="position-relative z-1">
 		{word}
 	</span>
-	<svg
-		width="182"
-		height="10"
-		viewBox="0 0 182 10"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-		class="position-absolute start-0 bottom-0 w-100"
-		class:list={["underline-color", { green: isGreen }]}
-	>
-		<path
-			d="M2.00826 8.25427C45.3965 3.66439 141.721 -2.81237 179.911 7.99954"
-			stroke="currentColor"
-			stroke-width="3"
-			stroke-linecap="round"></path>
-	</svg>
+	{
+		isLg ? (
+			<svg
+				width="259"
+				height="10"
+				viewBox="0 0 259 10"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class:list={["position-absolute bottom-0 w-100 underline-color underline-lg", { green: isGreen }]}
+			>
+				<path
+					d="M1.99789 8C64.1984 3.47226 202.279 -2.86658 256.998 8"
+					stroke="#00EBA4"
+					stroke-width="3"
+					stroke-linecap="round"
+				/>
+				<path
+					d="M1.99789 8C64.1984 3.47226 202.279 -2.86658 256.998 8"
+					stroke="black"
+					stroke-opacity="0.2"
+					stroke-width="3"
+					stroke-linecap="round"
+				/>
+			</svg>
+		) : (
+			<svg
+				width="182"
+				height="10"
+				viewBox="0 0 182 10"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class:list={["position-absolute start-0 bottom-0 w-100 underline-color", { green: isGreen }]}
+			>
+				<path
+					d="M2.00826 8.25427C45.3965 3.66439 141.721 -2.81237 179.911 7.99954"
+					stroke="currentColor"
+					stroke-width="3"
+					stroke-linecap="round"
+				/>
+			</svg>
+		)
+	}
 </span>
 
 <style>
@@ -29,5 +62,8 @@ const { word, isGreen } = Astro.props;
 	}
 	.underline-color.green {
 		color: var(--st-green);
+	}
+	.underline-lg {
+		left: -3px;
 	}
 </style>

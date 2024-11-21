@@ -1,9 +1,13 @@
 ---
+interface Props {
+    blackBg?: boolean
+}
+const { blackBg } = Astro.props;
 import Image from "astro/components/Image.astro";
 import CovaSvgWhite from "../../images/logo-cova-white.svg";
 ---
 
-<header class="black-bg">
+<header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/">

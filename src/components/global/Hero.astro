@@ -1,8 +1,13 @@
 ---
 interface Props {
 	fullHeight?: boolean;
+    hasSlider?: boolean;
+    hasModal?: boolean;
+    hasCaption?: boolean;
+    hasScroller?: boolean;
+    bgImg?: string;
 }
-const { fullHeight } = Astro.props;
+const { fullHeight, hasSlider, hasModal, hasCaption, hasScroller, bgImg } = Astro.props;
 ---
 
 <section
@@ -16,157 +21,158 @@ const { fullHeight } = Astro.props;
 		data-bs-ride="carousel"
 	>
 		<div class="carousel-inner w-100 h-100">
-			<!-- Placehold img > https://placehold.co/1920x1080/FBE0CC/FBE0CC/png -->
 			<div class="carousel-item w-100 h-100 active">
 				<img
-					src="https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_960_720.jpg 1x, https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg"
+					src={bgImg ? bgImg : "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg"}
 					class="d-block w-100 h-100 object-fit-cover"
 					alt="image"
 				/>
 			</div>
-			<div class="carousel-item w-100 h-100">
-				<img
-					src="https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_960_720.jpg 1x, https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg"
-					class="d-block w-100 h-100 object-fit-cover"
-					alt="image"
-				/>
-			</div>
-			<div class="carousel-item w-100 h-100">
-				<img
-					src="https://images.unsplash.com/photo-1629878165379-3a5bafe1df63?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					class="d-block w-100 h-100 object-fit-cover"
-					alt="image"
-				/>
-			</div>
+            { hasSlider &&
+                <div class="carousel-item w-100 h-100">
+                    <img
+                        src="https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg"
+                        class="d-block w-100 h-100 object-fit-cover"
+                        alt="image"
+                    />
+                </div>
+                <div class="carousel-item w-100 h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1629878165379-3a5bafe1df63?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="d-block w-100 h-100 object-fit-cover"
+                        alt="image"
+                    />
+                </div> }
 		</div>
 	</div>
 	<!-- Content -->
 	<div class="container d-flex align-items-center z-1 position-relative">
         <!-- Text -->
 		<div class="hero-content flex-fill text-white px-2">
-			<h1 class="hero-title display-4">
-				Vive y emprende <br /><span class="font-poppins-bold"
-					>experiencias únicas</span>
-			</h1>
-			<p class="hero-text w50 mt-3 fs-5">
-				Descubre destinos inolvidables o únete como propietario a
-				nuestro marketplace de administración hotelera.
-			</p>
+            <slot/>
 			<!-- Modal trigger -->
-			<button
-				class="btn btn-md rounded-pill text-white mt-3 mb-4 fs-5"
-				data-bs-toggle="modal"
-				data-bs-target="#ProfileModal"
-				>Explorar servicios
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="btn-arrow"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
-						clip-rule="evenodd"></path>
-				</svg>
-			</button>
-			<div class="caption">
-				<div class="stars-container d-flex mt-4">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-						class="star"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-							clip-rule="evenodd"></path>
-					</svg>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-						class="star"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-							clip-rule="evenodd"></path>
-					</svg>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-						class="star"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-							clip-rule="evenodd"></path>
-					</svg>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-						class="star"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-							clip-rule="evenodd"></path>
-					</svg>
-				</div>
-				<p class="small-text mt-2 mb-0">
-					Hoteles valorados <span class="font-inter-bold">9.2</span
-					>/10 <br />por <span class="font-inter-bold">+600</span> huéspedes
-					en <br />Patagonia y Costa Atlántica
-				</p>
-			</div>
+             { hasModal &&
+                <button
+                    class="btn btn-md rounded-pill text-white mt-3 mb-4 fs-5"
+                    data-bs-toggle="modal"
+                    data-bs-target="#ProfileModal"
+                    >Explorar servicios
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="btn-arrow"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button> }
+                
+                { hasCaption && 
+                    <div class="caption">
+                        <div class="stars-container d-flex mt-4">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="star"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="star"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="star"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="star"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="small-text mt-2 mb-0">
+                            Hoteles valorados <span class="font-inter-bold">9.2</span
+                            >/10 <br />por <span class="font-inter-bold">+600</span> huéspedes
+                            en <br />Patagonia y Costa Atlántica
+                        </p>
+                    </div> 
+                }
 		</div>
-        <!-- Scroller -->
-		<div class="scroller-container position-absolute bottom-0 opacity-25">
-			<div class="scroller-out position-relative rounded-4">
-				<div class="scroller-in position-absolute rounded-4"></div>
-			</div>
-		</div>
+
+        { hasScroller &&
+            <div class="scroller-container position-absolute bottom-0 opacity-25">
+                <div class="scroller-out position-relative rounded-4">
+                    <div class="scroller-in position-absolute rounded-4"></div>
+                </div>
+            </div> 
+        }
 	</div>
-	<!-- Modal -->
-	<div
-		class="modal fade"
-		id="ProfileModal"
-		tabindex="-1"
-		aria-labelledby="ProfileModalLabel"
-		aria-hidden="true"
-	>
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="ProfileModalLabel">
-						Modal title
-					</h1>
-					<button
-						type="button"
-						class="btn-close"
-						data-bs-dismiss="modal"
-						aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					Woo-hoo, you're reading this text in a modal!
-				</div>
-				<div class="modal-footer">
-					<button
-						type="button"
-						class="btn btn-secondary"
-						data-bs-dismiss="modal">Close</button
-					>
-					<button type="button" class="btn btn-primary"
-						>Save changes</button
-					>
-				</div>
-			</div>
-		</div>
-	</div>
+
+     { hasModal && 
+        <div
+            class="modal fade"
+            id="ProfileModal"
+            tabindex="-1"
+            aria-labelledby="ProfileModalLabel"
+            aria-hidden="true"
+	    >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ProfileModalLabel">
+                            Modal title
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Woo-hoo, you're reading this text in a modal!
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button
+                        >
+                        <button type="button" class="btn btn-primary"
+                            >Save changes</button
+                        >
+                    </div>
+                </div>
+            </div>
+        </div> 
+      }
 </section>
 
 <style>

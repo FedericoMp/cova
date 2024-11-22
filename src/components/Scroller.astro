@@ -1,0 +1,36 @@
+<div class="scroller-container position-absolute bottom-0 opacity-25">
+	<div class="scroller-out position-relative rounded-4">
+		<div class="scroller-in position-absolute rounded-4"></div>
+	</div>
+</div>
+
+<style>
+	.scroller-container {
+		left: 50%;
+		transform: translate(50%, -50%);
+	}
+	.scroller-container .scroller-out {
+		width: 17px;
+		height: 39px;
+		background-color: #c1c1c1;
+	}
+	.scroller-container .scroller-in {
+		top: 1px;
+		opacity: 0.5;
+		width: 17px;
+		height: 17px;
+		background-color: #484848;
+		animation: scroller 3s linear infinite alternate;
+	}
+
+	@keyframes scroller {
+		0% {
+			opacity: 0.5;
+			top: 1px;
+		}
+		100% {
+			opacity: 1;
+			top: 20px;
+		}
+	}
+</style>

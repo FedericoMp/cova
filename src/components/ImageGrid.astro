@@ -1,0 +1,58 @@
+<div class="image-grid">
+    <div class="container py-5 mb-5">
+        <div class="row gx-5">
+            <div class="col">
+                <div class="card card-text border-0 bg-grey mb-5 px-5">
+                    <p class="fs-large text-center m-auto">¿Cansado de gestionar tu hotel? <span class="font-inter-bold">Nosotros te ayudamos</span></p>
+                </div>
+                <div class="card border-0 overflow-hidden mb-5">
+                    <img src="https://images.unsplash.com/photo-1445991842772-097fea258e7b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img-fluid">
+                </div>
+                <div class="card card-text border-0 bg-grey px-5">
+                    <p class="fs-large text-center m-auto"><span class="text-decoration-underline">Regístrate</span> <span class="font-inter-bold">sin costo</span> y destaca en el mercado</p>
+                </div>
+            </div>
+            <div class="col right-col">
+                <div class="card border-0 overflow-hidden mb-5">
+                    <img src="https://images.unsplash.com/photo-1714558940949-595a1aa5fcdc?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img-fluid">
+                </div>
+                <div class="card card-text border-0 bg-orange mb-5 px-5">
+                    <p class="fs-large text-center m-auto"><span class="text-decoration-underline">Sumá</span> tu establecimiento <span class="font-inter-bold">sin ningún compromiso financiero</span></p>
+                </div>
+                <div class="card border-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1714423703976-0bb084f50360?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .image-grid .container .row .col.right-col {
+        margin-top: 8rem;
+    }
+    .image-grid .container .row .col .card.card-text {
+        min-height: 25rem;
+    }
+    .image-grid .container .row .col .card.bg-grey {
+        background-color: var(--bs-gray-200);
+    }
+    .image-grid .container .row .col .card.bg-orange {
+        color: var(--white);
+        background-color: var(--st-orange);
+    }
+    .image-grid .container .row .col .card p.fs-large {
+        font-size: xx-large;
+    }
+    @media screen and (max-width: 765px) {
+        .image-grid .container .row .col.right-col {
+            margin-top: 3rem;
+        }
+        .image-grid .container .row .col .card.card-text {
+            min-height: 18rem;
+        }
+        .image-grid .container .row .col .card p.fs-large {
+            font-size: x-large;
+        }
+    }
+</style>

@@ -1,0 +1,100 @@
+<div class="contact-form position-relative overflow-hidden d-flex align-items-center">
+    <div class="container text-white py-5 px-4 z-1">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3 class="display-6 w75">Respondemos tus consultas</h3>
+                <p class="w75 mt-4">Envianos un mensaje, contanos tus consultas sobre nuetros destinos o para unirte como propietario.</p>
+            </div>
+            <div class="col-12 col-md-5 offset-md-1 mt-4 mt-md-0">
+                <form action="">
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@gmail.com">
+                      </div>
+                      <div class="mb-4 row">
+                        <div class="col-12">
+                            <p class="form-label">Asunto</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="topic" id="topic1" checked>
+                                <label class="form-check-label" for="topic1">
+                                    Destinos y promociones
+                                </label>
+                              </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="topic" id="topic2">
+                              <label class="form-check-label" for="topic2">
+                                Unirme al marketplace
+                              </label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Escribí tu mensaje acá"></textarea>
+                      </div>
+                    <button class="btn text-white">Enviar consulta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contact-form {
+        min-height: 35rem;
+        background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+        background-image: url("https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    }
+    .contact-form::before {
+        top: 0;
+        right: 0;
+        z-index: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000000ba;
+    }
+    .contact-form form .form-label {
+        color: #c1c1c1;
+    }
+    .contact-form form .form-control::placeholder {
+        opacity: .4;
+        color: var(--white);
+    }
+    .contact-form form .form-control {
+        color: var(--white);
+        border-color: var(--st-green);
+        background-color: var(--bs-secondary-color);
+    }
+    .contact-form form .form-check-input {
+        border-color: var(--st-green);
+        background-color: var(--bs-secondary-color);
+    }
+    .contact-form form .form-check-input:checked {
+        border-color: var(--st-green);
+        background-color: var(--st-green);
+    }
+    .contact-form form .form-check-input:checked[type=radio] {
+        --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23797979'/%3e%3c/svg%3e");
+    }
+    .contact-form form button.btn {
+		filter: brightness(0.95);
+		background-color: var(--green);
+	}
+	.contact-form form button.btn:hover {
+		background-color: var(--dk-green);
+	}
+	.contact-form form button.btn .btn-arrow {
+		width: 29px;
+		height: 29px;
+		fill: var(--st-green);
+		transform: rotate(320deg);
+	}
+</style>

@@ -2,10 +2,11 @@
 interface Props {
 	word: string,
 	isGreen?: boolean,
+	isWhite?: boolean,
 	isLg?: boolean,
 }
 
-const { word, isGreen, isLg } = Astro.props;
+const { word, isGreen, isWhite, isLg } = Astro.props;
 ---
 
 <span class="font-poppins-med position-relative">
@@ -20,11 +21,11 @@ const { word, isGreen, isLg } = Astro.props;
 				viewBox="0 0 259 10"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				class:list={["position-absolute bottom-0 w-100 underline-color underline-lg", { green: isGreen }]}
+				class:list={["position-absolute bottom-0 w-100 underline-color underline-lg", { green: isGreen }, { white: isWhite }]}
 			>
 				<path
 					d="M1.99789 8C64.1984 3.47226 202.279 -2.86658 256.998 8"
-					stroke="#00EBA4"
+					stroke="currentColor"
 					stroke-width="3"
 					stroke-linecap="round"
 				/>
@@ -43,7 +44,7 @@ const { word, isGreen, isLg } = Astro.props;
 				viewBox="0 0 182 10"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				class:list={["position-absolute start-0 bottom-0 w-100 underline-color", { green: isGreen }]}
+				class:list={["position-absolute start-0 bottom-0 w-100 underline-color", { green: isGreen }, { white: isWhite }]}
 			>
 				<path
 					d="M2.00826 8.25427C45.3965 3.66439 141.721 -2.81237 179.911 7.99954"
@@ -59,9 +60,16 @@ const { word, isGreen, isLg } = Astro.props;
 <style>
 	.underline-color {
 		color: var(--st-orange);
+		stroke: var(--st-orange);
 	}
 	.underline-color.green {
+		stroke: var(--st-green);
 		color: var(--st-green);
+	}
+	.underline-color.white {
+		color: var(--white);
+		stroke: var(--white);
+		filter: brightness(1.5);
 	}
 	.underline-lg {
 		left: -3px;

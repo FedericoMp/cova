@@ -1,0 +1,58 @@
+<div class="newsletter position-relative overflow-hidden d-flex align-items-center justify-content-center rounded-top">
+    <div class="960-container d-flex flex-column align-items-center text-white py-5 px-4 z-1 text-center">
+        <h3 class="display-6 w75">Enterate de las <span class="font-inter-bold">novedades y noticias</span></h3>
+        <p class="w75 my-4">Para conocer nuevos destinos, ofertas exclusivas y mucho más, suscribite a nuestro newsletter.</p>
+        <form action="" class="w50 mt-3">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="tuemail@gmail.com" aria-label="tuemail@gmail.com" aria-describedby="button-addon-email">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon-email" name="button-addon-email">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-envelope">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                      </svg>
+                </button>
+                </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .newsletter {
+        min-height: 35rem;
+        background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+        background-image: url("https://images.unsplash.com/photo-1446488614340-2d1a68d662f9?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    }
+    .newsletter::before {
+        top: 0;
+        right: 0;
+        z-index: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000000ba;
+    }
+    .newsletter form .form-control::placeholder {
+        opacity: .4;
+        color: var(--white);
+    }
+    .newsletter form .form-control {
+        color: var(--white);
+        border-color: var(--st-green);
+        background-color: var(--bs-secondary-color);
+    }
+    .newsletter form button.btn {
+		filter: brightness(0.95);
+        border-color: var(--st-green);
+		background-color: var(--green);
+	}
+	.newsletter form button.btn:hover {
+		background-color: var(--dk-green);
+	}
+	.newsletter form button.btn .btn-envelope {
+		width: 29px;
+		height: 29px;
+        stroke: var(--lt-grey);
+	}
+</style>

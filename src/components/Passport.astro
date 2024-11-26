@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import PassportImg from "../images/passport.webp";
+import UnderlineWord from "./UnderlineWord.astro";
+---
+<div class="passport rounded-top">
+    <div class="container px-4 py-5 d-flex justify-content-between align-items-center position-relative">
+        <Image
+            src={PassportImg}
+            alt="Pasaporte CoVacations"
+            class="passport-image d-none d-lg-block ms-auto position-absolute"
+        />
+        <div class="text-content text-white mx-auto mx-lg-0 ms-lg-auto w50">
+            <h3 class="display-6 w75"><UnderlineWord word="Pasaporte" isLg={true} isWhite={true}/> CoVacations</h3>
+            <p class=" w75 my-4">Accedé a promociones y beneficios especiales, en esta sección podrás encontrar diferentes propuestas para visitar nuestros destinos y complejos.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .passport {
+        background-color: var(--orange);
+    }
+    .passport .passport-image {
+        top: -4rem;
+        left: 10%;
+    }
+    .passport .text-content {
+        padding: 2rem 0;
+    }
+    @media screen and (min-width: 769px) and (max-width: 991px) {
+        .passport .text-content {
+            margin-left: 3rem;
+        }
+	}
+    @media screen and (min-width: 992px) {
+        .passport .text-content {
+            padding: 4rem 0;
+        }
+    }
+</style>

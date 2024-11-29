@@ -3,7 +3,7 @@ interface Props {
     blackBg?: boolean
 }
 const { blackBg } = Astro.props;
-const currentPath = (Astro.url.pathname).slice(1);
+const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 ---
 

@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import CovaSvgBlack from "../images/logo-cova-black.svg";
+import CovaSvgBlack from "../../public/images/logo-cova-black.svg";
 ---
 
 <div
@@ -20,7 +19,7 @@ import CovaSvgBlack from "../images/logo-cova-black.svg";
 					aria-label="Close"></button>
 			</div>
 			<div class="modal-body text-center">
-				<Image src={CovaSvgBlack} alt="CoVacations" class="logo" />
+				<img src={CovaSvgBlack.src} alt="CoVacations" class="logo" />
 				<h5>Nuestras propuestas</h5>
 				<p class="py-2 pb-4 opacity-75">
 					Comenzá con tu experiencia seleccionando nuestros diferentes

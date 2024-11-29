@@ -1,14 +1,13 @@
 ---
-import Image from "astro/components/Image.astro";
-import BarcodeImg from "../images/barcode.svg";
+import BarcodeImg from "../../public/images/barcode.svg";
 ---
 <section class="promos">
     <div class="container-960 px-4 py-5">
         <div class="row g-4">
             <div class="col-12 col-md-6">
                 <div class="card card-promo pt-3 px-4 pb-4 rounded-3 position-relative overflow-hidden">
-                    <Image
-						src={BarcodeImg}
+                    <img
+						src={BarcodeImg.src}
 						alt="Promo CoVacation"
 						class="img-fluid h-100 opacity-50 position-absolute top-0 end-0 barcode-img"
 					/>
@@ -28,8 +27,8 @@ import BarcodeImg from "../images/barcode.svg";
             </div>
             <div class="col-12 col-md-6">
                 <div class="card card-promo pt-3 px-4 pb-4 rounded-3 position-relative overflow-hidden">
-                    <Image
-						src={BarcodeImg}
+                    <img
+						src={BarcodeImg.src}
 						alt="Promo CoVacation"
 						class="img-fluid h-100 opacity-50 position-absolute top-0 end-0 barcode-img"
 					/>

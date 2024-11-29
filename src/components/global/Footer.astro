@@ -1,7 +1,6 @@
 ---
 const currentPath = (Astro.url.pathname).slice(1).replace("/","");
-import Image from "astro/components/Image.astro";
-import CovaSvgWhite from "../../images/logo-cova-white.svg";
+import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 ---
 
 <footer>
@@ -14,7 +13,7 @@ import CovaSvgWhite from "../../images/logo-cova-white.svg";
 					class="w-auto mb-3 mb-md-0 px-0 pt-3 pb-4 link-body-emphasis text-decoration-none"
 					href="/"
 				>
-					<Image src={CovaSvgWhite} alt="CoVacations" class="logo" />
+					<img src={CovaSvgWhite.src} alt="CoVacations" class="logo" />
 				</a>
 			</div>
 			<!-- Ubicación -->

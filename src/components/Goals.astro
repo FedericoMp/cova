@@ -1,6 +1,5 @@
 ---
-import Image from "astro/components/Image.astro";
-import GoalsImg from "../images/goals.webp";
+import GoalsImg from "../../public/images/goals.webp";
 import UnderlineWord from "./UnderlineWord.astro";
 ---
 
@@ -100,8 +99,8 @@ import UnderlineWord from "./UnderlineWord.astro";
 				</p>
 			</div>
 			<div class="feature col mb-3">
-				<Image
-					src={GoalsImg}
+				<img
+					src={GoalsImg.src}
 					alt="Objetivos"
 					class="goals-image d-block mx-auto mx-lg-0"
 				/>

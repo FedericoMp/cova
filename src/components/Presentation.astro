@@ -1,8 +1,7 @@
 ---
 import UnderlineWord from "./UnderlineWord.astro";
-import Image from "astro/components/Image.astro";
-import MarketImg from "../images/market.webp";
-import RateImg from "../images/rate.webp";
+import MarketImg from "../../public/images/market.webp";
+import RateImg from "../../public/images/rate.webp";
 ---
 
 <section class="presentation">
@@ -43,8 +42,8 @@ import RateImg from "../images/rate.webp";
 				<div
 					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative card-mb-gutter"
 				>
-					<Image
-						src={MarketImg}
+					<img
+						src={MarketImg.src}
 						alt="Asegurar ingresos recurrentes"
 						class="position-absolute market-img"
 					/>
@@ -100,8 +99,8 @@ import RateImg from "../images/rate.webp";
 					class="card card-cover overflow-hidden text-bg-dark border-0 rounded-4 shadow-lg position-relative"
 					style="background-image: url('https://images.unsplash.com/photo-1629878165379-3a5bafe1df63?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
 				>
-					<Image
-						src={RateImg}
+					<img
+						src={RateImg.src}
 						alt="Gestión de propiedades"
 						class="position-absolute rate-img"
 					/>

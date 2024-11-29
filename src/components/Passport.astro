@@ -1,12 +1,11 @@
 ---
-import Image from "astro/components/Image.astro";
-import PassportImg from "../images/passport.webp";
+import PassportImg from "../../public/images/passport.webp";
 import UnderlineWord from "./UnderlineWord.astro";
 ---
 <div class="passport rounded-top position-relative">
     <div class="container px-4 py-5 d-flex justify-content-between align-items-center position-relative">
-        <Image
-            src={PassportImg}
+        <img
+            src={PassportImg.src}
             alt="Pasaporte CoVacations"
             class="passport-image d-none d-lg-block ms-auto position-absolute"
         />

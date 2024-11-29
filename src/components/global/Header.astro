@@ -4,15 +4,14 @@ interface Props {
 }
 const { blackBg } = Astro.props;
 const currentPath = (Astro.url.pathname).slice(1).replace("/","");
-import Image from "astro/components/Image.astro";
-import CovaSvgWhite from "../../images/logo-cova-white.svg";
+import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 ---
 
 <header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <Image src={CovaSvgWhite} alt="CoVacations" class="logo" />
+                <img src={CovaSvgWhite.src} alt="CoVacations" class="logo" />
             </a>
             <button
                 class="navbar-toggler"

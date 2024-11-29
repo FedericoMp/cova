@@ -6,21 +6,28 @@ import HalfWidthImg from '../components/HalfWidthImg.astro';
 import Passport from '../components/Passport.astro';
 import Promos from '../components/Promos.astro';
 import Newsletter from '../components/Newsletter.astro';
+import Wip from '../components/Wip.astro';
+
+const dev = true;
 ---
 
-<Layout title="CoVacations - Destinos">
-	<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" hasBgGradient={true}>
-		<h1 class="hero-title display-4">
-			Elige el destino, <span class="font-poppins-bold"
-				>nosotros nos ocupamos del resto</span>
-		</h1>
-		<p class="hero-text w50 mt-3 fs-5">
-			Explorá todas las opciones y destinos para tu próxima aventura.
-		</p>
-	</Hero>
-	<Breadcrumb/>
-	<HalfWidthImg/>
-	<Passport/>
-	<Promos/>
-	<Newsletter/>
+<Layout title="CoVacations - Destinos" headerBlackBg={true}>
+	{ !dev ?
+		<main>
+			<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" hasBgGradient={true}>
+				<h1 class="hero-title display-4">
+					Elige el destino, <span class="font-poppins-bold"
+						>nosotros nos ocupamos del resto</span>
+				</h1>
+				<p class="hero-text w50 mt-3 fs-5">
+					Explorá todas las opciones y destinos para tu próxima aventura.
+				</p>
+			</Hero>
+			<Breadcrumb/>
+			<HalfWidthImg/>
+			<Passport/>
+			<Promos/>
+			<Newsletter/>
+		</main>
+		: <Wip/> }
 </Layout>

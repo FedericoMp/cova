@@ -48,7 +48,7 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 				<h5>Sitemap</h5>
 				<ul class="nav flex-column">
 					<li class="nav-item mb-2">
-						<a href="/cova/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/")}]}>Inicio</a>
+						<a href="/cova/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>Inicio</a>
 					</li>
 					<li class="nav-item mb-2">
 						<a href="/cova/destinos/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/destinos/")}]}>Destinos</a>

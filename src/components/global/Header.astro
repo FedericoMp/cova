@@ -45,9 +45,9 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
                 <div class="offcanvas-body p-0">
                     <p class="text-secondary p-3">Explorá las secciones para comenzar con tu experiencia</p>
                     <ul class="navbar-nav justify-content-end flex-grow-1">
-                        <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath === "cova/")}]}>
+                        <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>
                             <a class="px-4 nav-link" aria-current="page" href="/cova/">
-                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "cova/")}]}>Inicio</h5>
+                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>Inicio</h5>
                                 <p class="px-3 mb-2 text-secondary">¿Quiénes somos y qué ofrecemos?</p>
                             </a>
                         </li>

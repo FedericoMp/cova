@@ -10,7 +10,7 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 <header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/cova/">
                 <img src={CovaSvgWhite.src} alt="CoVacations" class="logo" />
             </a>
             <button
@@ -46,19 +46,19 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
                     <p class="text-secondary p-3">Explorá las secciones para comenzar con tu experiencia</p>
                     <ul class="navbar-nav justify-content-end flex-grow-1">
                         <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath === "")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/">
-                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "/")}]}>Inicio</h5>
+                            <a class="px-4 nav-link" aria-current="page" href="/cova/">
+                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "cova/")}]}>Inicio</h5>
                                 <p class="px-3 mb-2 text-secondary">¿Quiénes somos y qué ofrecemos?</p>
                             </a>
                         </li>
-                        <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "destinos/")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/destinos/">
+                        <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "cova/destinos/")}]}>
+                            <a class="px-4 nav-link" aria-current="page" href="/cova/destinos/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "destinos/")}]}>Destinos</h5>
                                 <p class="px-3 mb-2 text-secondary">Lugares y experiencias inolvidables</p>
                             </a>
                         </li>
-                        <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "propietarios/")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/propietarios/">
+                        <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "cova/propietarios/")}]}>
+                            <a class="px-4 nav-link" aria-current="page" href="/cova/propietarios/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "propietarios/")}]}>Propietarios</h5>
                                 <p class="px-3 mb-2 text-secondary">Sumá tu alojamiento</p>
                             </a>

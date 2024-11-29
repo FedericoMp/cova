@@ -1,0 +1,47 @@
+<section class="half-image overflow-hidden">
+    <div class="row">
+        <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+            <div class="w75 container-text d-flex flex-column justify-content-center align-items-center mx-auto text-center px-4">
+                <h2 class="w75 title mt-3">¿Querés formar parte 
+                    del <span class="font-poppins-med">marketplace</span>?</h2>
+                <p class="w75 text mt-3">Trabajamos constantemente para mejorar nuestras experiencias, administrar las actividades y sumar destinos.</p>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="link ps-3 mt-4 mb-5">Contá con nosotros 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-0 bg-half-image"></div>
+    </div>
+</section>
+
+<style>
+    .half-image .container-text a.link {
+        opacity: 0.8;
+        width: fit-content;
+        text-decoration: none;
+        color: var(--st-orange);
+    }
+    .half-image .container-text a.link:hover,
+    .half-image .container-text a.link:hover .chevron {
+        opacity: 1;
+    }
+    .half-image .container-text a.link .chevron {
+        width: 1rem;
+        opacity: .8;
+        stroke: var(--st-orange);
+    }
+    .half-image .bg-half-image {
+        min-height: 35rem;
+        background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+        background-image: url("https://images.unsplash.com/photo-1665254369274-4b459f3ce48c?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    }
+    @media screen and (max-width: 991px) {
+        .half-image .bg-half-image {
+            min-height: 20rem;
+        }
+    }
+</style>

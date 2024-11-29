@@ -1,5 +1,5 @@
 ---
-const currentPath = (Astro.url.pathname).slice(1).replace("/","");
+const currentPath = (Astro.url.pathname).slice(1);
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 ---
 
@@ -48,13 +48,13 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 				<h5>Sitemap</h5>
 				<ul class="nav flex-column">
 					<li class="nav-item mb-2">
-						<a href="/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "")}]}>Inicio</a>
+						<a href="/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "/")}]}>Inicio</a>
 					</li>
 					<li class="nav-item mb-2">
-						<a href="/destinos" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "destinos")}]}>Destinos</a>
+						<a href="/destinos/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "destinos/")}]}>Destinos</a>
 					</li>
 					<li class="nav-item mb-2">
-						<a href="/propietarios" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "propietarios")}]}
+						<a href="/propietarios/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "propietarios/")}]}
 							>Propietarios</a
 						>
 					</li>

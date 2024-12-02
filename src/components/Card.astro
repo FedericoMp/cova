@@ -1,0 +1,44 @@
+---
+interface Props {
+	img: string,
+	rate: string,
+	title: string,
+	location: string,
+    link: string
+}
+
+const { img, rate, title, location, link } = Astro.props;
+---
+
+<a href={link} class="text-decoration-none">
+    <div class="card border-0 bg-transparent">
+        <img
+            src={img}
+            class="card-img-top rounded"
+            alt="..."
+        />
+        <div class="card-body px-1 pb-0 pt-2">
+            <div class="rate" style="font-size: small;">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="star"
+                    style="width: .7rem;"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span>{rate}</span>
+            </div>
+            <p class="card-text font-inter-bold mb-0">
+                {title}
+            </p>
+            <p class="card-text">
+                {location}
+            </p>
+        </div>
+    </div>
+</a>

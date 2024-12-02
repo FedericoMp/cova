@@ -1,0 +1,129 @@
+---
+import UnderlineWord from "./UnderlineWord.astro";
+import Card from "./Card.astro";
+---
+
+<section class="filter-destinies">
+	<div class="container-960 px-4 py-5">
+		<h2
+			class="mt-4 pb-2 font-poppins position-relative title-underline text-center title m-auto w-50"
+		>
+			Elegí entre las mejores
+			<UnderlineWord word="propuestas" isLg={true} />
+		</h2>
+		<p class="text-center w50 mt-4 mb-5 m-auto">
+			Cada destino, se convierte en una oportunidad única, una invitación
+			a conocer y disfrutar.
+		</p>
+		<!-- Filter tabs -->
+		<ul
+			class="nav nav-pills mt-4 mb-5 justify-content-center"
+			id="pills-tab"
+			role="tablist"
+		>
+			<li class="nav-item mx-1" role="presentation">
+				<button
+					class="nav-link active"
+					id="pills-home-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-all"
+					type="button"
+					role="tab"
+					aria-controls="pills-all"
+					aria-selected="true">Todos</button
+				>
+			</li>
+			<li class="nav-item mx-1" role="presentation">
+				<button
+					class="nav-link"
+					id="pills-playa-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-playa"
+					type="button"
+					role="tab"
+					aria-controls="pills-playa"
+					aria-selected="false">Costa Atlántica</button
+				>
+			</li>
+			<li class="nav-item mx-1" role="presentation">
+				<button
+					class="nav-link"
+					id="pills-patagonia-tab"
+					data-bs-toggle="pill"
+					data-bs-target="#pills-patagonia"
+					type="button"
+					role="tab"
+					aria-controls="pills-patagonia"
+					aria-selected="false">Patagonia</button
+				>
+			</li>
+		</ul>
+		<!-- Filter content -->
+		<div class="tab-content mb-5" id="pills-tabContent">
+			<div
+				class="tab-pane fade show active"
+				id="pills-all"
+				role="tabpanel"
+				aria-labelledby="pills-all-tab"
+				tabindex="0"
+			>
+				<!-- Todos los destinos -->
+				<div class="row">
+					<div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.3" title="Punto Bariloche" location="Cerro Catedral, Rio Negro" link="/destino/slug/001"/>
+					</div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.2" title="Punto Playa" location="Villa Gesell, Buenos Aires" link="/destino/slug/002"/>
+					</div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.2" title="Albar Club de Mar" location="Pinamar, Buenos Aires" link="/destino/slug/003"/>
+					</div>
+				</div>
+			</div>
+			<div
+				class="tab-pane fade"
+				id="pills-playa"
+				role="tabpanel"
+				aria-labelledby="pills-playa-tab"
+				tabindex="0"
+			>
+				<!-- Costa y playa -->
+                 <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.2" title="Punto Playa" location="Villa Gesell, Buenos Aires" link="/destino/slug/002"/>
+					</div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.2" title="Albar Club de Mar" location="Pinamar, Buenos Aires" link="/destino/slug/003"/>
+					</div>
+                 </div>
+			</div>
+			<div
+				class="tab-pane fade"
+				id="pills-patagonia"
+				role="tabpanel"
+				aria-labelledby="pills-patagonia-tab"
+				tabindex="0"
+			>
+				<!-- Visita el sur -->
+                 <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <Card img="https://placehold.co/600x400" rate="9.3" title="Punto Bariloche" location="Cerro Catedral, Rio Negro" link="/destino/slug/001"/>
+					</div>
+                 </div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+        .filter-destinies {
+            background-color: var(--lt-grey);
+        }
+		ul.nav.nav-pills#pills-tab {
+			--bs-nav-link-color: var(--st-orange);
+			--bs-nav-link-hover-color: var(--dk-orange);
+		}
+		ul.nav.nav-pills#pills-tab .nav-link.active {
+			background-color: var(--st-orange);
+		}
+	</style>
+</section>

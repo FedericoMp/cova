@@ -1,0 +1,77 @@
+---
+interface Props {
+	title: string,
+	text: string,
+    link: string
+}
+
+const { title, text, link } = Astro.props;
+import BarcodeImg from "../../public/images/barcode.svg";
+---
+
+<div class="card card-promo pt-3 px-4 pb-4 rounded-3 position-relative overflow-hidden">
+    <img
+        src={BarcodeImg.src}
+        alt="Promo CoVacation"
+        class="img-fluid h-100 opacity-50 position-absolute top-0 end-0 barcode-img"
+    />
+    <div class="d-inline-flex align-items-center justify-content-center mb-3 card-icon rounded-3 z-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+          </svg>
+    </div>
+    <h4 class="title mt-4 mb-2">{title}</h4>
+    <p class="text">{text}</p>
+    <a href={link} target="_blank" rel="noopener noreferrer" class="link">Consultar 
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+    </a>
+</div>
+
+<style>
+    .card-promo {
+        border-color: var(--lt-orange);
+    }
+    .card-promo::before {
+        top: 0;
+        left: 0;
+        content: '';
+        z-index: 0;
+        opacity: .5;
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        background-color: var(--lt-grey);
+    }
+    .card-promo .card-icon {
+        width: 3rem;
+		height: auto;
+        padding: .3rem;
+		color: var(--white);
+        border: 1px solid;
+        border-color: var(--st-orange);
+    }
+    .card-promo .card-icon svg {
+        fill: var(--st-orange);
+
+    }
+    .card-promo .text {
+        font-size: small;
+    }
+    .card-promo a.link {
+        opacity: 0.8;
+        width: fit-content;
+        text-decoration: none;
+        color: var(--st-orange);
+    }
+    .card-promo a.link:hover,
+    .card-promo a.link:hover .chevron {
+        opacity: 1;
+    }
+    .card-promo a.link .chevron {
+        width: 1rem;
+        opacity: .8;
+        stroke: var(--st-orange);
+    }
+</style>

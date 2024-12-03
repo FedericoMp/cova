@@ -1,6 +1,18 @@
 ---
 import UnderlineWord from "./UnderlineWord.astro";
 import Card from "./Card.astro";
+
+import { getCollection } from "astro:content"
+
+const allDestinies = await getCollection('destinos');
+
+const costaDestinies = await getCollection('destinos', ({data}) => {
+	return data.region === "Costa Atlántica"
+});
+
+const patagoniaDestinies = await getCollection('destinos', ({data}) => {
+	return data.region === "Patagonia"
+});
 ---
 
 <section class="filter-destinies">
@@ -67,17 +79,19 @@ import Card from "./Card.astro";
 				aria-labelledby="pills-all-tab"
 				tabindex="0"
 			>
-				<!-- Todos los destinos -->
 				<div class="row">
-					<div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.3" title="Punto Bariloche" location="Cerro Catedral, Rio Negro" link="/destino/slug/001"/>
-					</div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.2" title="Punto Playa" location="Villa Gesell, Buenos Aires" link="/destino/slug/002"/>
-					</div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.2" title="Albar Club de Mar" location="Pinamar, Buenos Aires" link="/destino/slug/003"/>
-					</div>
+					{ allDestinies.map(d => {
+						return (
+							<div class="col-12 col-sm-6 col-md-4">
+								<Card 
+									img={d.data.images[0]} 
+									rate={d.data.rate} 
+									title={d.data.title} 
+									location={d.data.locationMin} 
+									link={`/cova/destino/${d.data.slug}`}/>
+							</div>
+						)
+					})}
 				</div>
 			</div>
 			<div
@@ -87,14 +101,19 @@ import Card from "./Card.astro";
 				aria-labelledby="pills-playa-tab"
 				tabindex="0"
 			>
-				<!-- Costa y playa -->
                  <div class="row">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.2" title="Punto Playa" location="Villa Gesell, Buenos Aires" link="/destino/slug/002"/>
-					</div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.2" title="Albar Club de Mar" location="Pinamar, Buenos Aires" link="/destino/slug/003"/>
-					</div>
+                    { costaDestinies.map(d => {
+						return (
+							<div class="col-12 col-sm-6 col-md-4">
+								<Card 
+									img={d.data.images[0]} 
+									rate={d.data.rate} 
+									title={d.data.title} 
+									location={d.data.locationMin} 
+									link={`/cova/destino/${d.data.slug}`}/>
+							</div>
+						)
+					})}
                  </div>
 			</div>
 			<div
@@ -104,26 +123,34 @@ import Card from "./Card.astro";
 				aria-labelledby="pills-patagonia-tab"
 				tabindex="0"
 			>
-				<!-- Visita el sur -->
                  <div class="row">
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <Card img="https://placehold.co/600x400" rate="9.3" title="Punto Bariloche" location="Cerro Catedral, Rio Negro" link="/destino/slug/001"/>
-					</div>
+                    { patagoniaDestinies.map(d => {
+						return (
+							<div class="col-12 col-sm-6 col-md-4">
+								<Card 
+									img={d.data.images[0]} 
+									rate={d.data.rate} 
+									title={d.data.title} 
+									location={d.data.locationMin} 
+									link={`/cova/destino/${d.data.slug}`}/>
+							</div>
+						)
+					})}
                  </div>
 			</div>
 		</div>
 	</div>
-
-	<style>
-        .filter-destinies {
-            background-color: var(--lt-grey);
-        }
-		ul.nav.nav-pills#pills-tab {
-			--bs-nav-link-color: var(--st-orange);
-			--bs-nav-link-hover-color: var(--dk-orange);
-		}
-		ul.nav.nav-pills#pills-tab .nav-link.active {
-			background-color: var(--st-orange);
-		}
-	</style>
 </section>
+
+<style>
+	.filter-destinies {
+		background-color: var(--lt-grey);
+	}
+	ul.nav.nav-pills#pills-tab {
+		--bs-nav-link-color: var(--st-orange);
+		--bs-nav-link-hover-color: var(--dk-orange);
+	}
+	ul.nav.nav-pills#pills-tab .nav-link.active {
+		background-color: var(--st-orange);
+	}
+</style>

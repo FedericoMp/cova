@@ -1,0 +1,20 @@
+{
+    "$schema": "../../../.astro/collections/destinos.schema.json",
+    "slug": "punto-playa",
+    "title": "Punto Playa",
+    "images": [
+        "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg",
+        "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg"
+    ],
+    "rate": "9.4",
+    "description": "Complejo hotelero que cuenta con un predio de 1800m a 100m de la playa, cuenta con 8 unidades equipadas.",
+    "location": "El complejo se encuentra en Avenida 1 Bis y paseo 151, Villa Gesell, Buenos Aires.",
+    "locationMin": "Villa Gesell, Buenos Aires",
+    "region": "Costa Atlántica",
+    "chords": ["-37.299526","-57.000313"],
+    "contactLinks": [
+        "+54 9 11 2561 0211",
+        "info@puntoplaya.com.ar",
+        "https://www.puntoplaya.com.ar/"
+    ]
+}

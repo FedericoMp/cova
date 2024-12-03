@@ -1,0 +1,20 @@
+{
+    "$schema": "../../../.astro/collections/destinos.schema.json",
+    "slug": "albar-club-de-mar",
+    "title": "Albar Club de Mar",
+    "images": [
+        "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg",
+        "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg"
+    ],
+    "rate": "9.2",
+    "description": "Apart Hotel con modernos departamentos equipados, amenities de primer nivel y desayuno buffet.",
+    "location": "El complejo se encuentra en Av. Arq Jorge Bunge 1867, Pinamar, Buenos Aires.",
+    "locationMin": "Pinamar, Buenos Aires",
+    "region": "Costa Atlántica",
+    "chords": ["-37.114567", "-56.860706"],
+    "contactLinks": [
+        "+54 9 11 2561 0211",
+        "info@albarclubdemar.com.ar",
+        "https://www.albarclubdemar.com.ar/"
+    ]
+}

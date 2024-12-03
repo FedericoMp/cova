@@ -1,0 +1,20 @@
+{
+    "$schema": "../../../.astro/collections/destinos.schema.json",
+    "slug": "punto-bariloche",
+    "title": "Punto Bariloche",
+    "images": [
+        "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg",
+        "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg"
+    ],
+    "rate": "9.3",
+    "description": "En la base del Cerro Catedral, cuenta con unidades de 3 ambientes totalmente equipados, a solo 300m de los medios de elevacion y con vistas increíbles.",
+    "location": "El complejo se encuentra Grado Cero 1: Punta Nevada 661 / Grado Cero 5 Grado Cero 3: Acceso a Cerro y Punta Nevada, en Bariloche, Rio Negro",
+    "locationMin": "Cerro Catedral, Rio Negro",
+    "region": "Patagonia",
+    "chords": ["-41.167594", "-71.439487"],
+    "contactLinks": [
+        "+54 9 11 2561 0211",
+        "info@puntobarilochecatedral.com.ar",
+        "https://www.puntobarilochecatedral.com.ar/"
+    ]
+}

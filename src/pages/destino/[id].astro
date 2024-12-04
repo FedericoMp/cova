@@ -2,9 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Wip from '../../components/Wip.astro';
 
-const dev = true;
+const dev = false;
 
 import { getCollection } from "astro:content"
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import TopDestiny from '../../components/TopDestiny.astro';
+import DestinyGallery from '../../components/DestinyGallery.astro';
+import BottomDestiny from '../../components/BottomDestiny.astro';
 
 export async function getStaticPaths() {
 	const destinos = await getCollection('destinos');
@@ -21,8 +25,20 @@ const { slug, title, images, rate, description, location, locationMin, region, c
 
 <Layout title={`CoVacations - ${title}`} headerBlackBg={true}>
 	{ !dev ?
-		<main>
-			
+		<main class="destiny-main">
+			<Breadcrumb isDestiny={true} destinyTitle={title}/>
+			<TopDestiny 
+				title={title} 
+				rate={rate} 
+				description={description}/>
+			<DestinyGallery images={images}/>
+			<BottomDestiny contactLinks={contactLinks}/>
 		</main>
 		: <Wip/> }
 </Layout>
+
+<style>
+	main.destiny-main {
+		padding-top: 112px;
+	}
+</style>

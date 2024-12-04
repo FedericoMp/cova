@@ -1,0 +1,58 @@
+---
+interface Props {
+    contactLinks: string[]
+}
+
+const { contactLinks } = Astro.props;
+---
+
+<section class="bottom-destiny py-5">
+    <div class="container px-4">
+        <div class="contact-links">
+            <h4 class="mb-3">Contacto</h4>
+            <p class="mb-1">
+                <a href=`https://wa.me/${contactLinks[0].replaceAll(' ','')}`
+                target="_blank" rel="noopener noreferrer"
+                class="nav-link p-0">{contactLinks[0]}</a>
+            </p>
+            { contactLinks[1] &&
+                <p class="mb-1">
+                    <a href=`mailto:${contactLinks[1]}`
+                    target="_blank" rel="noopener noreferrer"
+                    class="nav-link p-0">{contactLinks[1]}</a>
+                </p>}
+            { contactLinks[2] &&
+                <p class="mb-1">
+                    <a href={contactLinks[2]}
+                    target="_blank" rel="noopener noreferrer"
+                    class="nav-link p-0">{contactLinks[2]}</a>
+                </p>}
+        </div>
+        <a href="cova/destinos" class="btn btn-back mt-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow-back">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+              </svg>              
+            Regresar a destinos
+        </a>
+    </div>
+</section>
+
+<style>
+    .bottom-destiny .contact-links a {
+        width: fit-content;
+    }
+    .bottom-destiny .contact-links a:hover {
+        color: var(--st-orange);
+    }
+    .bottom-destiny .btn.btn-back {
+        color: var(--st-orange);
+        border: 1px solid var(--st-orange);
+    }
+    .bottom-destiny .btn.btn-back svg.arrow-back {
+        width: 1.5rem;
+    }
+    .bottom-destiny .btn.btn-back:hover {
+        color: var(--white);
+        background-color: var(--st-orange);
+    }
+</style>

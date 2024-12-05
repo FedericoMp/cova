@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/global/Hero.astro';
 import MainInfo from '../components/MainInfo.astro';
 import Presentation from '../components/Presentation.astro';
 import Goals from '../components/Goals.astro';
 ---
 
-<Layout title="CoVacations">
+<BaseLayout title="CoVacations">
 	<Hero fullHeight={true} hasSlider={true} hasModal={true} hasCaption={true} hasScroller={true} hasBgGradient={true}>
 		<h1 class="hero-title display-4 text-shadow-3">
 			Vive y emprende <br /><span class="font-poppins-bold"

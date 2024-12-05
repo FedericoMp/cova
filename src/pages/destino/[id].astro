@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import DestinyLayout from '../../layouts/DestinyLayout.astro';
 import Wip from '../../components/Wip.astro';
 
 const dev = false;
@@ -25,7 +25,7 @@ const { title, images, rate, description, location, locationMin, region, chords,
 
 ---
 
-<Layout title={`CoVacations - ${title}`} headerBlackBg={true} isDestinyPage={true}>
+<DestinyLayout title={`CoVacations - ${title}`} headerBlackBg={true}>
 	{ !dev ?
 		<main class="destiny-main">
 			<Breadcrumb isDestiny={true} destinyTitle={title}/>
@@ -42,7 +42,7 @@ const { title, images, rate, description, location, locationMin, region, chords,
 			<DestinyBottom contactLinks={contactLinks}/>
 		</main>
 		: <Wip/> }
-</Layout>
+</DestinyLayout>
 
 <style>
 	main.destiny-main {

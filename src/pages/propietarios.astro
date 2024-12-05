@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Oportunities from '../components/Oportunities.astro';
@@ -7,10 +7,10 @@ import ImageGrid from '../components/ImageGrid.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Wip from '../components/Wip.astro';
 
-const dev = true;
+const dev = false;
 ---
 
-<Layout title="CoVacations - Propietarios" headerBlackBg={true}>
+<BaseLayout title="CoVacations - Propietarios" headerBlackBg={true}>
 	{ !dev ?
 		<main>
 			<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg="https://images.unsplash.com/photo-1681505504714-4ded1bc247e7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" hasBgGradient={true}>

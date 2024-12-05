@@ -9,6 +9,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import DestinyTop from '../../components/DestinyTop.astro';
 import DestinyGallery from '../../components/DestinyGallery.astro';
 import DestinyBottom from '../../components/DestinyBottom.astro';
+import DestinyMap from '../../components/DestinyMap.astro';
 
 export async function getStaticPaths() {
 	const destinos = await getCollection('destinos');
@@ -20,7 +21,7 @@ export async function getStaticPaths() {
 
 const { destino } = Astro.props;
 const { data } = destino;
-const { slug, title, images, rate, description, location, locationMin, region, chords, contactLinks } = data;
+const { title, images, rate, description, location, locationMin, region, chords, contactLinks } = data;
 
 ---
 
@@ -33,6 +34,11 @@ const { slug, title, images, rate, description, location, locationMin, region, c
 				rate={rate} 
 				description={description}/>
 			<DestinyGallery images={images}/>
+			<DestinyMap 
+				location={location} 
+				locationMin={locationMin} 
+				region={region}
+				chords={chords}/>
 			<DestinyBottom contactLinks={contactLinks}/>
 		</main>
 		: <Wip/> }

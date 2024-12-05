@@ -1,0 +1,69 @@
+---
+interface Props {
+	location: string;
+	locationMin: string;
+	region: string;
+	chords: string[];
+}
+
+const { location, locationMin, region, chords } = Astro.props;
+import marker from "../images/cova-marker-icon-2x.png";
+---
+
+<section class="destiny-map py-5">
+	<div class="container px-4">
+		<h4 class="mt-5 mb-3">Ubicación</h4>
+		<p class="w50">{location}</p>
+		<div
+			id="map"
+			class="rounded-3"
+			data-x={chords[0]}
+			data-y={chords[1]}
+			data-location-min={locationMin}
+			data-region={region}
+			data-marker={marker.src}
+		>
+		</div>
+	</div>
+</section>
+
+<style>
+	.destiny-map #map {
+		min-height: 35rem;
+		background-color: var(--lt-grey);
+	}
+</style>
+
+<script is:inline type="module">
+	
+	document.addEventListener("astro:page-load", () => {
+		const mapEl = document.getElementById("map");
+		const zoomLevel = 17;
+		const maxZoom = 20;
+
+		const map = L.map("map", {
+			center: [mapEl.dataset.x, mapEl.dataset.y],
+			zoom: zoomLevel,
+		});
+
+		L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+			maxZoom: maxZoom,
+			attribution:
+				'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		}).addTo(map);
+
+        const customIcon = L.icon({
+            iconUrl: mapEl.dataset.marker,
+            iconSize: [33, 54],
+            iconAnchor: [14, 80],
+            popupAnchor: [-3, -76],
+        })
+
+		L.marker([mapEl.dataset.x, mapEl.dataset.y], {icon: customIcon})
+			.addTo(map)
+			.bindPopup(
+				`${mapEl.dataset.region}<br/><b>${mapEl.dataset.locationMin}</b>`
+			)
+			.openPopup();
+	});
+</script>

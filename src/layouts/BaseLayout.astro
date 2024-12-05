@@ -1,0 +1,12 @@
+---
+interface Props {
+	title: string;
+	headerBlackBg?: boolean;
+}
+const { title, headerBlackBg } = Astro.props;
+import Layout from "./Layout.astro";
+---
+
+<Layout title={title} headerBlackBg={headerBlackBg}>
+    <slot />
+</Layout>

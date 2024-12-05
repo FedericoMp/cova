@@ -1,13 +1,18 @@
 ---
+interface Image {
+    isFeatured: boolean;
+    url: string;
+    label: string;
+}
 interface Props {
-	images: string[];
+	images: Image[];
 }
 
 const { images } = Astro.props;
 ---
 
 <div class="destiny-gallery-container">
-    <div id="destinyGallery" class="carousel slide carousel-fade h-100">
+    <div id="destinyGallery" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
         <div class="carousel-indicators">
             {
                 images.map((img, index) => {
@@ -18,7 +23,7 @@ const { images } = Astro.props;
                             data-bs-slide-to={index}
                             class:list={["btn-link-gallery", {active: (index === 0)}]}
                             aria-current="true"
-                            aria-label="Slide"
+                            aria-label={img.label}
                         />
                     );
                 })
@@ -29,7 +34,7 @@ const { images } = Astro.props;
                 images.map((img, index) => {
                     return (
                         <div class:list={["carousel-item h-100", {active: (index === 0)}]}>
-                            <img src={img} class="d-block w-100 h-100 object-fit-cover" alt="Imagen" />
+                            <img src={img.url} class="d-block w-100 h-100 object-fit-cover" alt={img.label} />
                         </div>
                     );
                 })
@@ -58,6 +63,11 @@ const { images } = Astro.props;
 
 <style>
     .destiny-gallery-container {
-        height: 75vh;
+        height: 70vh;
+    }
+    @media screen and (max-width: 991px) {
+        .destiny-gallery-container {
+            height: 50vh;
+        }
     }
 </style>

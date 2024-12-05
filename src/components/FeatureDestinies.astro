@@ -25,21 +25,21 @@ const destinos = await getCollection('destinos');
                 <FeatureDestinyCard 
                     title={destinos[0].data.region} 
                     link={`/cova/destino/${destinos[0].data.slug}`} 
-                    bgImg={destinos[0].data.images[0]}
+                    bgImg={destinos[0].data.images[0].url}
                 />
 			</div>
 			<div class="col-6 col-md-3">
                 <FeatureDestinyCard 
                     title={destinos[1].data.region} 
                     link={`/cova/destino/${destinos[1].data.slug}`} 
-                    bgImg={destinos[1].data.images[0]}
+                    bgImg={destinos[1].data.images[0].url}
                 />
             </div>
 			<div class="col-6 col-md-3">
                 <FeatureDestinyCard 
                     title={destinos[2].data.region} 
                     link={`/cova/destino/${destinos[2].data.slug}`} 
-                    bgImg={destinos[2].data.images[0]}
+                    bgImg={destinos[2].data.images[0].url}
                 />
             </div>
 		</div>

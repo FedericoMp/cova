@@ -84,7 +84,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 						return (
 							<div class="col-12 col-sm-6 col-md-4">
 								<Card 
-									img={d.data.images[0]} 
+									img={d.data.images[0].url} 
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
@@ -106,7 +106,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 						return (
 							<div class="col-12 col-sm-6 col-md-4">
 								<Card 
-									img={d.data.images[0]} 
+									img={d.data.images[0].url} 
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
@@ -128,7 +128,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 						return (
 							<div class="col-12 col-sm-6 col-md-4">
 								<Card 
-									img={d.data.images[0]} 
+									img={d.data.images[0].url} 
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 

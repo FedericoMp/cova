@@ -6,7 +6,7 @@ interface Props {
 const { contactLinks } = Astro.props;
 ---
 
-<section class="bottom-destiny py-5">
+<section class="destiny-bottom py-5">
     <div class="container px-4">
         <div class="contact-links">
             <h4 class="mb-3">Contacto</h4>
@@ -38,20 +38,20 @@ const { contactLinks } = Astro.props;
 </section>
 
 <style>
-    .bottom-destiny .contact-links a {
+    .destiny-bottom .contact-links a {
         width: fit-content;
     }
-    .bottom-destiny .contact-links a:hover {
+    .destiny-bottom .contact-links a:hover {
         color: var(--st-orange);
     }
-    .bottom-destiny .btn.btn-back {
+    .destiny-bottom .btn.btn-back {
         color: var(--st-orange);
         border: 1px solid var(--st-orange);
     }
-    .bottom-destiny .btn.btn-back svg.arrow-back {
+    .destiny-bottom .btn.btn-back svg.arrow-back {
         width: 1.5rem;
     }
-    .bottom-destiny .btn.btn-back:hover {
+    .destiny-bottom .btn.btn-back:hover {
         color: var(--white);
         background-color: var(--st-orange);
     }

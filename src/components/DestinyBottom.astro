@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { contactLinks } = Astro.props;
+const mailto = contactLinks[1] ? `mailto:${contactLinks[1]}` : '';
 ---
 
 <section class="destiny-bottom py-5">
@@ -17,7 +18,7 @@ const { contactLinks } = Astro.props;
             </p>
             { contactLinks[1] &&
                 <p class="mb-1">
-                    <a href=`mailto:${contactLinks[1]}`
+                    <a href={mailto}
                     target="_blank" rel="noopener noreferrer"
                     class="nav-link p-0">{contactLinks[1]}</a>
                 </p>}

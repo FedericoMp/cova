@@ -1,7 +1,7 @@
 ---
 interface Props {
-    isDestiny?: boolean,
-    destinyTitle?: string
+    isDestiny?: boolean;
+    destinyTitle?: string;
 }
 const currentPath = (Astro.url.pathname).slice(1).replaceAll("/","");
 const { isDestiny, destinyTitle } = Astro.props;

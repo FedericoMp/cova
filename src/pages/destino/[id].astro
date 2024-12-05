@@ -12,14 +12,15 @@ import BottomDestiny from '../../components/BottomDestiny.astro';
 
 export async function getStaticPaths() {
 	const destinos = await getCollection('destinos');
-	return destinos.map(destino => ({
-		params: { id: destino.data.slug},
+	return destinos.map((destino: any) => ({
+		params: { id: destino?.data?.slug},
 		props: { destino }
 	}))
 }
 
 const { destino } = Astro.props;
-const { slug, title, images, rate, description, location, locationMin, region, chords, contactLinks } = destino.data;
+const { data } = destino;
+const { slug, title, images, rate, description, location, locationMin, region, chords, contactLinks } = data;
 
 ---
 

@@ -5,7 +5,12 @@ const destinosCollection = defineCollection({
     schema: z.object({
       slug: z.string(),
       title: z.string(),
-      images: z.array(z.string()),
+      images: z.array(
+        z.object({
+          isFeatured: z.boolean(),
+          url: z.string(),
+          label: z.string()
+        })),
       rate: z.string(),
       description: z.string(),
       location: z.string(),

@@ -15,9 +15,10 @@ const destinosCollection = defineCollection({
       description: z.string(),
       location: z.string(),
       locationMin: z.string(),
-      region:  z.string(),
+      region: z.string(),
       chords: z.array(z.string()),
-      contactLinks: z.array(z.string())
+      contactLinks: z.array(z.string()),
+      bookingLink: z.string(),
   })
 });
 

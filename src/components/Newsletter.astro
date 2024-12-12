@@ -2,18 +2,83 @@
     <div class="container-960 d-flex flex-column align-items-center text-white py-5 px-4 z-1 text-center">
         <h2 class="display-6 w75">Enterate de las <span class="font-inter-bold">novedades y noticias</span></h2>
         <p class="w75 my-4">Para conocer nuevos destinos, ofertas exclusivas y mucho más, suscribite a nuestro newsletter.</p>
-        <form action="" class="w50 mt-3">
+        <form id="newsletter" class="w50 mt-3" method="POST" >
             <div class="input-group">
-                <input type="email" class="form-control" placeholder="tuemail@gmail.com" aria-label="tuemail@gmail.com" aria-describedby="button-addon-email">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon-email" name="button-addon-email">
+                <input type="email" name="Email" id="newsletter-email" class="form-control" placeholder="tuemail@gmail.com" aria-label="tuemail@gmail.com" aria-describedby="button-addon-email" required>
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon-email" name="button-addon-email" disabled>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-envelope">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                       </svg>
                 </button>
-                </div>
+            </div>
+            <small class="mt-2 input-group d-none" id="userInfo"></small>
         </form>
     </div>
 </div>
+
+<script>
+    import { postDataForm } from "../utils/postData.js"
+    document.addEventListener("astro:page-load", () => {
+        const newsletterForm : HTMLFormElement | any = document.getElementById("newsletter");
+        const emailForm : HTMLInputElement | any = document.getElementById("newsletter-email");
+        const buttonForm: HTMLInputElement | any = document.getElementById("button-addon-email");
+        const userInfo : HTMLInputElement | any = document.getElementById("userInfo");
+
+        emailForm?.addEventListener("input", (e: any) => {
+            const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+            const evaluate = regex.exec(e.target.value);
+            if(evaluate) {
+                buttonForm?.removeAttribute("disabled");
+                userInfo.classList.remove("invalid");
+                userInfo.classList.add("valid");
+                userInfo.textContent = "Formato de email correcto";
+            } else {
+                userInfo.textContent = "Por favor, ingresar formato de email válido.";
+                userInfo.classList.add("invalid");
+                userInfo.classList.remove("d-none");
+            }
+        })
+
+        newsletterForm?.addEventListener("submit", (e: any) => {
+            e.preventDefault();
+            buttonForm?.setAttribute("disabled", true);
+            userInfo.classList.add("valid");
+            userInfo.textContent = "Enviando datos...";
+            userInfo.classList.remove("d-none");
+
+            const formData = new FormData(newsletterForm);
+
+            let keyValuePairs = []
+            for (const pair of formData.entries()) {
+                keyValuePairs.push(pair[0] + "=" + pair[1])
+            }
+            const formDataString = keyValuePairs.join("&")
+            
+            postDataForm(formDataString)
+            .then((data) => {
+                // data > is the response object
+                userInfo.textContent = "Datos enviados exitosamente.";
+                newsletterForm.reset();
+    
+                setTimeout(() => {
+                    userInfo.textContent = "";
+                }, 2600);
+            })
+            .catch((error) => {
+                // console.error(error);
+                userInfo.classList.remove("valid");
+                userInfo.classList.add("invalid");
+                userInfo.textContent = "Ocurrio un error al procesar los datos, intentelo nuevamente.";
+                newsletterForm.reset();
+                setTimeout(() => {
+                    userInfo.textContent = "";
+                    userInfo.classList.remove("invalid");
+                }, 2600);
+            });
+        });
+        
+    });
+</script>
 
 <style>
     .newsletter {
@@ -55,4 +120,10 @@
 		height: 29px;
         stroke: var(--lt-grey);
 	}
+    .newsletter form small#userInfo.invalid {
+        color: var(--bs-danger-border-subtle);
+    }
+    .newsletter form small#userInfo.valid {
+        color: var(--green);
+    }
 </style>

@@ -1,143 +1,19 @@
-<div class="contact-form position-relative overflow-hidden d-flex align-items-center">
-    <div class="container text-white py-5 px-4 z-1">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h2 class="display-6 w75">Respondemos tus consultas</h2>
-                <p class="w75 mt-4">Envianos un mensaje, contanos tus consultas sobre nuetros destinos o para unirte como propietario.</p>
-            </div>
-            <div class="col-12 col-md-5 offset-md-1 mt-4 mt-md-0">
-                <form id="contact" method="POST">
-                    <div class="mb-4">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="contact-email" name="Email" placeholder="tuemail@gmail.com" required>
-                        <small class="mt-2 input-group d-none" id="emailInfo"></small>
-                    </div>
-                    <div class="mb-4 row">
-                        <div class="col-12">
-                            <p class="form-label">Asunto</p>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="Topic" id="topic1" value="Destinos y promociones" required checked>
-                                <label class="form-check-label" for="topic1">
-                                    Destinos y promociones
-                                </label>
-                              </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="Topic" id="topic2" value="Unirme al marketplace" required>
-                              <label class="form-check-label" for="topic2">
-                                Unirme al marketplace
-                              </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-1">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="contact-message" rows="4" placeholder="Escribí tu mensaje acá..." name="Message" maxlength="450" required></textarea>
-                        <small class="form-label opacity-75">Caracteres permitidos: <span id="textControl">0/450</span></small>
-                    </div>
-                    <small class="mt-2 mb-2 input-group d-none" id="userInfo"></small>
-                    <button class="btn text-white mt-4" id="button-submit" disabled>Enviar consulta</button>
-                </form>
-            </div>
-        </div>
+<div class="contact-form position-relative overflow-hidden d-flex align-items-center justify-content-center rounded-top">
+    <div class="container-960 d-flex flex-column align-items-center text-white py-5 px-4 z-1 text-center">
+        <h2 class="display-6 w75">Respondemos <span class="font-inter-bold">tus consultas</span></h2>
+        <p class="w75 my-4">Envianos un mensaje, contanos tus consultas sobre nuetros destinos o para unirte como propietario, completando un formulario con algunos datos útiles.</p>
+        <a href="https://forms.gle/5emqtDLfAxPBnyEB7" target="_blank" rel="noopener noreferrer" class="link btn">
+            Solicitar info
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+        </a>
     </div>
 </div>
 
-<script>
-    import { postDataForm } from "../utils/postData.js"
-    document?.addEventListener("astro:page-load", () => {
-        const contactForm : HTMLFormElement | any = document.getElementById("contact");
-        const emailForm : HTMLInputElement | any = document.getElementById("contact-email");
-        const messageForm : HTMLInputElement | any = document.getElementById("contact-message");
-        const buttonForm: HTMLInputElement | any = document.getElementById("button-submit");
-        
-        const textControl : any = document.getElementById("textControl");
-        const emailInfo : any = document.getElementById("emailInfo");
-        const userInfo : any = document.getElementById("userInfo");
-
-        const checkform = () => {
-            let formData = new FormData(contactForm);
-            let inptValues : any[] = [];
-            for (const input of formData.entries()) {
-                inptValues.push(input[1])
-            }
-            const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-            if (regex.exec(inptValues[0]) && inptValues[2].length > 0) {
-                buttonForm?.removeAttribute("disabled");
-            } else {
-                buttonForm?.setAttribute("disabled", true);
-            }
-        };
-
-        emailForm?.addEventListener("input", (e: any) => {
-            const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-            const evaluate = regex.exec(e.target.value);
-            if(evaluate) {
-                emailInfo.classList.remove("invalid");
-                emailInfo.classList.add("valid");
-                emailInfo.textContent = "Formato de email correcto";
-                checkform();
-            } else {
-                emailInfo.textContent = "Por favor, ingresar formato de email válido.";
-                emailInfo.classList.remove("valid");
-                emailInfo.classList.add("invalid");
-                emailInfo.classList.remove("d-none");
-            }
-        });
-
-        messageForm?.addEventListener("keyup", (e: any) => {
-            textControl.textContent = `${e.target.value.length}/450`;
-            checkform()
-        });
-
-        contactForm?.addEventListener("submit", (e: any) => {
-            e.preventDefault();
-            buttonForm?.setAttribute("disabled", true);
-            userInfo.classList.add("valid");
-            userInfo.textContent = "Enviando datos...";
-            userInfo.classList.remove("d-none");
-
-            const formData = new FormData(contactForm);
-
-            let keyValuePairs = []
-            for (const pair of formData.entries()) {
-                keyValuePairs.push(pair[0] + "=" + pair[1])
-            }
-            const formDataString = keyValuePairs.join("&")
-
-            postDataForm(formDataString)
-            .then((data) => {
-                // data > is the response object
-                userInfo.textContent = "Datos enviados exitosamente.";
-                contactForm.reset();
-    
-                setTimeout(() => {
-                    userInfo.textContent = "";
-                }, 2000);
-            })
-            .catch((error) => {
-                // console.error(error);
-                userInfo.classList.remove("valid");
-                userInfo.classList.add("invalid");
-                userInfo.textContent = "Ocurrio un error al procesar los datos, intentelo nuevamente.";
-                contactForm.reset();
-                setTimeout(() => {
-                    userInfo.textContent = "";
-                    emailInfo.textContent = "";
-                    userInfo.classList.remove("invalid");
-                }, 2600);
-            });
-        });
-        
-    });
-</script>
-
 <style>
     .contact-form {
-        min-height: 35rem;
+        min-height: 30rem;
         background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -153,52 +29,20 @@
         position: absolute;
         background-color: #000000ba;
     }
-    .contact-form form .form-label {
-        color: #c1c1c1;
-    }
-    .contact-form form .form-control::placeholder {
-        opacity: .4;
-        color: var(--white);
-    }
-    .contact-form form .form-control {
-        color: var(--white);
-        border-color: var(--st-green);
-        background-color: var(--bs-secondary-color);
-    }
-    .contact-form form .form-check-input {
-        border-color: var(--st-green);
-        background-color: var(--bs-secondary-color);
-    }
-    .contact-form form .form-check-input:checked {
-        border-color: var(--st-green);
+    .contact-form a.link {
+        opacity: 0.8;
+        width: fit-content;
+        text-decoration: none;
         background-color: var(--st-green);
+        color: var(--white);
     }
-    .contact-form form .form-check-input:checked[type=radio] {
-        --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23797979'/%3e%3c/svg%3e");
+    .contact-form a.link:hover,
+    .contact-form a.link:hover .chevron {
+        opacity: 1;
     }
-    .contact-form form button.btn {
-		filter: brightness(0.95);
-        border-color: var(--st-green);
-		background-color: var(--green);
-	}
-	.contact-form form button.btn:hover {
-		background-color: var(--dk-green);
-	}
-	.contact-form form button.btn .btn-arrow {
-		width: 29px;
-		height: 29px;
-		fill: var(--st-green);
-		transform: rotate(320deg);
-	}
-    .contact-form form small#emailInfo.invalid,
-    .contact-form form small#userInfo.invalid {
-        color: var(--bs-danger-border-subtle);
-    }
-    .contact-form form small#emailInfo.valid,
-    .contact-form form small#userInfo.valid {
-        color: var(--green);
-    }
-    .contact-form form textarea {
-        resize: none;
+    .contact-form a.link .chevron {
+        width: 1rem;
+        opacity: .8;
+        stroke: var(--white);
     }
 </style>

@@ -5,25 +5,55 @@
     "images": [
         {
             "isFeatured": true,
-            "url": "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg",
-            "label": "Foto 1"
+            "url": "https://images.pxsol.com/1656/company/library/user/18614146430e3cdf288b126ddd53740ac2750bc65be.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=b00a9887cad017d40de9ef41f5d8e3ab",
+            "label": "Punto Playa"
         },
         {
             "isFeatured": false,
-            "url": "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg",
-            "label": "Foto 2"
+            "url": "https://images.pxsol.com/1656/P3214/photos/b760be53c89b3536ba452cba606c938e91e3cbc7.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=3787c0a81b49bc0f48cd8aae7fa4a83a",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/company/library/user/16921951320a4bb6781873e5f26e216af8eb009fc44.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=d38da1f61c66d27605cf9bb3f6019f34",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/company/library/user/25382926740b434b99526c22a9675999a879366aea7.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=5b232d696843d01992889d89c7b6c9cf",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/P3214/photos/7115c1bc65e05d6d4ef786cec8d6abf22f68904e.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=90dd2828acdbe2194ef441946f7e2bf2",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/company/library/user/20306341416f2334975a0b7b3c6b32554a20725d42b.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=c16c98a0fcd03a025a4ad25778a3672d",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/company/library/user/15229756116b75f6d42cfc5d2831af08e484ac376aa.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=2126bd9706bfdbdb0884e03ca999e0cc",
+            "label": "Punto Playa"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1656/P3214/photos/b1feae6c90670e61bae8fe29a505e37bb3806620.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=b82b06e2eb7ad670cbe97037c126b5ce",
+            "label": "Punto Playa"
         }
     ],
     "rate": "9.4",
-    "description": "Complejo hotelero que cuenta con un predio de 1800m a 100m de la playa, cuenta con 8 unidades equipadas.",
+    "description": "Departamentos de 2 y 3 ambientes totalmente equipados. Ubicado a 100 metros de la playa. Con servicio de WIFI, limpieza y ropa blanca, cocina equipada con vajilla completa, parrilla individual. A/A frío-calor en dormitorios y estar-comedor, TV Smart, habitación principal con TV, cable, seguridad nocturna. Piscina climatizada in-out . Completo SPA: ducha escocesa, baño sauna, baño finlandés. Podes venir con su mascota (debe ser de contextura pequeña).",
     "location": "El complejo se encuentra en Avenida 1 Bis y paseo 151, Villa Gesell, Buenos Aires.",
     "locationMin": "Villa Gesell, Buenos Aires",
     "region": "Costa Atlántica",
     "chords": ["-37.299526","-57.000313"],
     "contactLinks": [
-        "+54 9 11 2561 0211",
-        "info@puntoplaya.com.ar",
-        "https://www.puntoplaya.com.ar/"
+        "+54 9 11 3903 7294",
+        "info@puntoplayaspa.com.ar",
+        "https://www.puntoplayaspa.com.ar/"
     ],
     "bookingLink": "https://www.booking.com/hotel/ar/punto-playa.es.html?label=en-es-booking-desktop-qYWoV_Fr*prpBspmirVxfgS652828998709%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp1005531%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&arphpl=1&checkin=2025-01-24&checkout=2025-01-28&dest_id=3371361&dest_type=hotel&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=52403f10c6d904fa&srepoch=1733734693&soh=1&from=searchresults#tab-reviews"
 }

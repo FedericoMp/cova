@@ -5,17 +5,37 @@
     "images": [
         {
             "isFeatured": true,
-            "url": "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg",
-            "label": "Foto 1"
+            "url": "https://images.pxsol.com/1711/P3435/photos/8b7ba5e529e62e7f14ce71f2ac5bd4e41b9d7685.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=06c0dbc2bfee073523424f80c371d48a",
+            "label": "Punto Bariloche"
         },
         {
             "isFeatured": false,
-            "url": "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg",
-            "label": "Foto 2"
+            "url": "https://images.pxsol.com/1711/P3435/photos/ed16ebc20fe69e438e8b9162eb15907bf867cd31.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=1653cb0a3fc0d7bf8c47c4c29e978348",
+            "label": "Punto Bariloche"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1711/P3435/photos/c73c9246073ebb1da92e05cc3c69d1f96d3c1be5.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=f150024f7566dd069ae5c0093dc9c766",
+            "label": "Punto Bariloche"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1711/P3435/photos/7a54fa584208d11273a88bbe2cdbe17f7c53fe1c.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=f59d8c84a739463ca2e236ea6f80b321",
+            "label": "Punto Bariloche"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1711/P3435/photos/bfd1283531d4f9f96893a29080a22b6c791c7913.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=4e1188da34a4d8c49609d3cb86bb68e1",
+            "label": "Punto Bariloche"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1711/P3435/photos/5a31dd0b0c92b58056fa98c7e8c02c25cee6d1d0.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=7e6789fc6932d5d29ad77df4acb80991",
+            "label": "Punto Bariloche"
         }
     ],
     "rate": "9.3",
-    "description": "En la base del Cerro Catedral, cuenta con unidades de 3 ambientes totalmente equipados, a solo 300m de los medios de elevacion y con vistas increíbles.",
+    "description": "Ubicado en la base del Cerro Catedral y a 20km de San Carlos de Bariloche, se encuentra Punto Bariloche, donde podrás disfrutar de nuestros departamentos totalmente equipados con capacidad para 6 y 7 pasajeros. En ellos podrás disfrutar tanto de la temporada invernal como así también de la temporada de verano. Desde Punto Bariloche podrás partir a realizar actividades de esquí, senderismo, paseos en bicicleta o dejarte llevar por los hermosos paisajes de la Patagonia Argentina.",
     "location": "El complejo se encuentra Grado Cero 1: Punta Nevada 661 / Grado Cero 5 Grado Cero 3: Acceso a Cerro y Punta Nevada, en Bariloche, Rio Negro",
     "locationMin": "Cerro Catedral, Rio Negro",
     "region": "Patagonia",

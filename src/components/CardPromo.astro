@@ -3,9 +3,11 @@ interface Props {
 	title: string;
 	text: string;
     link: string;
+    locationMin: string;
+    badge: string;
 }
 
-const { title, text, link } = Astro.props;
+const { title, text, link, locationMin, badge } = Astro.props;
 import BarcodeImg from "../../public/images/barcode.svg";
 ---
 
@@ -15,12 +17,16 @@ import BarcodeImg from "../../public/images/barcode.svg";
         alt="Promo CoVacation"
         class="img-fluid h-100 opacity-50 position-absolute top-0 end-0 barcode-img"
     />
-    <div class="d-inline-flex align-items-center justify-content-center mb-3 card-icon rounded-3 z-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
-          </svg>
+    <div class="d-flex justify-content-between align-items-start z-1 mb-3">
+        <div class="d-inline-flex align-items-center justify-content-center card-icon rounded-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+              </svg>
+        </div>
+        {badge.length > 0 && <span class="badge rounded-pill">{badge}</span>}
     </div>
-    <h4 class="title mt-4 mb-2">{title}</h4>
+    <small class="text-secondary mt-4">{locationMin}</small>
+    <h6 class="title my-2">{title}</h6>
     <p class="text">{text}</p>
     <a href={link} target="_blank" rel="noopener noreferrer" class="link">Consultar 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
@@ -56,8 +62,15 @@ import BarcodeImg from "../../public/images/barcode.svg";
         fill: var(--st-orange);
 
     }
+    .card-promo .badge.rounded-pill {
+        background-color: var(--st-orange);
+    }
+    .card-promo small.text-secondary {
+        font-size: x-small;
+    }
     .card-promo .text {
         font-size: small;
+        min-height: 2.5rem;
     }
     .card-promo a.link {
         opacity: 0.8;
@@ -71,7 +84,7 @@ import BarcodeImg from "../../public/images/barcode.svg";
     }
     .card-promo a.link .chevron {
         width: 1rem;
-        opacity: .8;
+        opacity: .9;
         stroke: var(--st-orange);
     }
 </style>

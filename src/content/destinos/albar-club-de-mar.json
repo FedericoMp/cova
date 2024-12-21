@@ -5,25 +5,45 @@
     "images": [
         {
             "isFeatured": true,
-            "url": "https://cdn.pixabay.com/photo/2021/06/07/14/21/mountains-6318080_1280.jpg",
-            "label": "Foto 1"
+            "url": "https://images.pxsol.com/1781/P3563/photos/9995df6c7328bddcb2d9352a5f51a413afa48d20.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=d76eb3e0ab421882ef5c14bd8aabde01",
+            "label": "Albar Club de Mar"
         },
         {
             "isFeatured": false,
-            "url": "https://cdn.pixabay.com/photo/2024/02/09/13/03/beach-8563083_1280.jpg",
-            "label": "Foto 2"
+            "url": "https://images.pxsol.com/1781/P3563/photos/67d2b16a20398462d5d56b74191a77689de9046a.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=36ed501d97b1e35760dff1a36854811a",
+            "label": "Albar Club de Mar"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1781/P3563/photos/baa185bd35c3a2a4af903956ef3081b696ffbe19.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=ad14c0cd386ea05f57f139162b6f680a",
+            "label": "Albar Club de Mar"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1781/P3563/photos/09d5527a8008fe1cc32d312a55ebfac967e39a27.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=561a5a7eaebb6a514cb1b78c9dbcd61a",
+            "label": "Albar Club de Mar"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1781/P3563/photos/0ec7600d9353130e8abad6e45e69a86481d11a01.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=0281cfbeafe20308e1429e7add935603",
+            "label": "Albar Club de Mar"
+        },
+        {
+            "isFeatured": false,
+            "url": "https://images.pxsol.com/1781/P3563/photos/b8e5374753a52d7a3217f1176ff0cc463302ed97.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=67267afffeb8d4579455bee2f8b4e986",
+            "label": "Albar Club de Mar"
         }
     ],
     "rate": "9.2",
-    "description": "Apart Hotel con modernos departamentos equipados, amenities de primer nivel y desayuno buffet.",
+    "description": "Apart Hotel con modernos departamentos totalmente equipados para tu disfrute. Infraestructura creada y diseñada para la seguridad y comodidad de los huéspedes. Por ello, los mejores servicios para que tu estadía sea una fusión perfecta entre confort y diversión. Nuestro complejo está situado cerca de todas las atracciones del destino más exclusivo de la costa atlántica.",
     "location": "El complejo se encuentra en Av. Arq Jorge Bunge 1867, Pinamar, Buenos Aires.",
     "locationMin": "Pinamar, Buenos Aires",
     "region": "Costa Atlántica",
     "chords": ["-37.114567", "-56.860706"],
     "contactLinks": [
-        "+54 9 11 2561 0211",
-        "info@albarclubdemar.com.ar",
-        "https://www.albarclubdemar.com.ar/"
+        "+54 9 11 4408 6513",
+        "info@albarpinamar.com.ar",
+        "https://www.albarpinamar.com.ar//"
     ],
     "bookingLink": "https://www.booking.com/hotel/ar/albar-club-de-mar.es.html?label=en-es-booking-desktop-qYWoV_Fr*prpBspmirVxfgS652828998709%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp1005531%3Ali%3Adec%3Adm&aid=2311236&ucfs=1&arphpl=1&checkin=2025-01-24&checkout=2025-01-28&dest_id=1441029&dest_type=hotel&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=6f6c3efc3813016c&srepoch=1733734653&soh=1&from=searchresults#tab-reviews"
 }

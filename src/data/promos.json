@@ -1,42 +1,44 @@
 [
     {
-        "title": "Promo Noviembre",
-        "text": "Promo Noviembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-1"
+        "title": "Promo Diciembre Findes",
+        "text": "Mejor tarifa garantizada reservando directo con el hotel.",
+        "link": "https://www.puntoplayaspa.com.ar/es/promos/promo-diciembre-findes.html",
+        "locationMin": "Villa Gesell, Buenos Aires",
+        "badge": "30% Off"
     },
     {
-        "title": "Promo Diciembre",
-        "text": "Promo Diciembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-2"
+        "title": "Diciembre LUN a JUE",
+        "text": "Hospedate de Lunes a Jueves y obtené un super descuento!",
+        "link": "https://www.puntoplayaspa.com.ar/es/promos/diciembre-lun-a-jue.html",
+        "locationMin": "Villa Gesell, Buenos Aires",
+        "badge": "50% Off"
     },
     {
-        "title": "Promo Noviembre",
-        "text": "Promo Noviembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-1"
+        "title": "Promo Ultimos Lugares",
+        "text": "Obtené un 50% de descuento reservando directo con el hotel.",
+        "link": "https://www.puntoplayaspa.com.ar/es/promos/promo-ultimos-lugares.html",
+        "locationMin": "Villa Gesell, Buenos Aires",
+        "badge": "50% Off"
     },
     {
-        "title": "Promo Diciembre",
-        "text": "Promo Diciembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-2"
+        "title": "Promo Diciembre: 19 al 29",
+        "text": "Vení a pasar las fiestas y Navidad en el complejo.",
+        "locationMin": "Pinamar, Buenos Aires",
+        "link": "https://www.albarpinamar.com.ar/es/promos/promo-19-al-29-12.html",
+        "badge": "50% Off"
     },
     {
-        "title": "Promo Noviembre",
-        "text": "Promo Noviembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-1"
+        "title": "Promo Enero y Febrero 2025",
+        "text": "Reservando 3 noches o mas obtenés un 50% de descuento contratando la estadía directamente con el hotel.",
+        "link": "https://www.puntobarilochecatedral.com.ar/es/promos/promo-enero-y-febrero-2025.html",
+        "locationMin": "Cerro Catedral, Rio Negro",
+        "badge": "50% Off"
     },
     {
-        "title": "Promo Diciembre",
-        "text": "Promo Diciembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-2"
-    },
-    {
-        "title": "Promo Noviembre",
-        "text": "Promo Noviembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-1"
-    },
-    {
-        "title": "Promo Diciembre",
-        "text": "Promo Diciembre LUN a JUE reservando directo con el hotel.",
-        "link": "/promo-2"
+        "title": "Promo Fiestas",
+        "text": "Obtené un 50% de descuento reservando directo con el alojamiento.",
+        "link": "https://www.puntobarilochecatedral.com.ar/es/promos/promo-fiestas.html",
+        "locationMin": "Cerro Catedral, Rio Negro",
+        "badge": "50% Off"
     }
 ]

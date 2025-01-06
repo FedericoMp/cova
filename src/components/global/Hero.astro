@@ -14,6 +14,9 @@ import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
+import HeroHomeImg1 from "../../../public/images/hero-home-1.webp"
+import HeroHomeImg2 from "../../../public/images/hero-home-2.webp"
+import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
 ---
 
 <section
@@ -29,23 +32,23 @@ import Caption from "../Caption.astro"
 		<div class="carousel-inner w-100 h-100">
 			<div class="carousel-item w-100 h-100 active">
 				<img
-					src={bgImg ? bgImg : "https://images.pxsol.com/1711/P3435/photos/8b7ba5e529e62e7f14ce71f2ac5bd4e41b9d7685.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=06c0dbc2bfee073523424f80c371d48a"}
-					class="d-block w-100 h-100 object-fit-cover"
+					src={bgImg ? bgImg : HeroHomeImg1.src}
+					class="d-block w-100 h-100 object-fit-cover rounded-bottom"
 					alt="image"
 				/>
 			</div>
             { hasSlider &&
                 <div class="carousel-item w-100 h-100">
                     <img
-                        src="https://images.pxsol.com/1656/company/library/user/25382926740b434b99526c22a9675999a879366aea7.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=5b232d696843d01992889d89c7b6c9cf"
-                        class="d-block w-100 h-100 object-fit-cover"
+                        src={HeroHomeImg2.src}
+                        class="d-block w-100 h-100 object-fit-cover rounded-bottom"
                         alt="image"
                     />
                 </div>
                 <div class="carousel-item w-100 h-100">
                     <img
-                        src="https://images.pxsol.com/1711/P3435/photos/bfd1283531d4f9f96893a29080a22b6c791c7913.jpg?auto=format&browser=Chrome&ixlib=php-3.3.1&w=1000&s=4e1188da34a4d8c49609d3cb86bb68e1"
-                        class="d-block w-100 h-100 object-fit-cover"
+                        src={HeroHomeImg3.src}
+                        class="d-block w-100 h-100 object-fit-cover rounded-bottom"
                         alt="image"
                     />
                 </div> }
@@ -80,8 +83,9 @@ import Caption from "../Caption.astro"
 		background-color: #00000066;
 	}
     .hero .bg-color-gradient {
-        backdrop-filter: blur(2px);
-        background: linear-gradient(320deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 40%) 100%);
+        /* backdrop-filter: blur(2px); */
+        /* background: linear-gradient(320deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 40%) 100%); */
+        background: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 40%) 100%);
     }
     .hero .hero-content .hero-text {
         max-width: 30rem;

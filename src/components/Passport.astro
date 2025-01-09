@@ -2,16 +2,22 @@
 import PassportImg from "../../public/images/passport.webp";
 import UnderlineWord from "./UnderlineWord.astro";
 ---
-<div class="passport rounded-top position-relative">
+<div class="passport rounded-top position-relative z-1">
     <div class="container px-4 py-5 d-flex justify-content-between align-items-center position-relative">
         <img
             src={PassportImg.src}
             alt="Pasaporte CoVacations"
             class="passport-image d-none d-lg-block ms-auto position-absolute"
+            data-aos="zoom-in"
         />
-        <div class="text-content text-white mx-auto mx-lg-0 ms-lg-auto w50">
+        <div class="text-content text-white mx-auto mx-lg-0 ms-lg-auto w50" data-aos="fade-left" data-aos-delay="300">
             <h2 class="display-6 w75"><UnderlineWord word="Pasaporte" isLg={true} isWhite={true}/> CoVacations</h2>
-            <p class="my-4">Accedé a promociones y beneficios especiales, en esta sección podrás encontrar diferentes propuestas para visitar nuestros destinos y complejos.</p>
+            <p class="my-4">Promociones y beneficios especiales, en esta sección podrás encontrar diferentes propuestas para visitar nuestros destinos y complejos.</p>
+            <a href="/cova/pasaporte" class="link">Conocé las promos 
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+            </a>
         </div>
     </div>
 </div>
@@ -29,6 +35,19 @@ import UnderlineWord from "./UnderlineWord.astro";
     }
     .passport .text-content {
         padding: 2rem 0;
+    }
+    .passport .text-content a.link {
+        width: fit-content;
+        text-decoration: none;
+        color: var(--white);
+    }
+    .passport .text-content a.link:hover,
+    .passport .text-content a.link:hover .chevron {
+        opacity: .7;
+    }
+    .passport .text-content a.link .chevron {
+        width: 1rem;
+        stroke: var(--white);
     }
     @media screen and (min-width: 769px) and (max-width: 991px) {
         .passport .text-content {

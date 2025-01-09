@@ -48,7 +48,7 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 				<h5>Sitemap</h5>
 				<ul class="nav flex-column">
 					<li class="nav-item mb-2">
-						<a href="/cova/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>Inicio</a>
+						<a href="/cova/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>Inicio</a>
 					</li>
 					<li class="nav-item mb-2">
 						<a href="/cova/destinos/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/destinos/")}]}>Destinos</a>
@@ -56,6 +56,11 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 					<li class="nav-item mb-2">
 						<a href="/cova/propietarios/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/propietarios/")}]}
 							>Propietarios</a
+						>
+					</li>
+					<li class="nav-item mb-2">
+						<a href="/cova/pasaporte/" class:list={["nav-link passport-item p-0", {"text-decoration-underline": (currentPath === "cova/pasaporte/")}]}
+							>Pasaporte</a
 						>
 					</li>
 				</ul>
@@ -156,6 +161,10 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 	footer a:hover {
 		opacity: 1;
 		color: var(--green);
+	}
+	footer a.passport-item:hover {
+		color: var(--orange);
+
 	}
 	footer .logo {
 		width: 110px;

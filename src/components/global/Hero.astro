@@ -17,6 +17,7 @@ import Caption from "../Caption.astro"
 import HeroHomeImg1 from "../../../public/images/hero-home-1.webp"
 import HeroHomeImg2 from "../../../public/images/hero-home-2.webp"
 import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
+import HeroHomeImg4 from "../../../public/images/hero-home-4.webp"
 ---
 
 <section
@@ -34,7 +35,7 @@ import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
 				<img
 					src={bgImg ? bgImg : HeroHomeImg1.src}
 					class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-					alt="image"
+					alt="CoVacations Group"
 				/>
 			</div>
             { hasSlider &&
@@ -42,14 +43,21 @@ import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
                     <img
                         src={HeroHomeImg2.src}
                         class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                        alt="image"
+                        alt="CoVacations Group"
                     />
                 </div>
                 <div class="carousel-item w-100 h-100">
                     <img
                         src={HeroHomeImg3.src}
                         class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                        alt="image"
+                        alt="CoVacations Group"
+                    />
+                </div>
+                <div class="carousel-item w-100 h-100">
+                    <img
+                        src={HeroHomeImg4.src}
+                        class="d-block w-100 h-100 object-fit-cover rounded-bottom"
+                        alt="CoVacations Group"
                     />
                 </div> }
 		</div>

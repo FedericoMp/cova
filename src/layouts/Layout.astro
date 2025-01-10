@@ -39,8 +39,9 @@ import 'aos/dist/aos.css'
 		<Footer/>
 		<script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		<script>
-			import AOS from 'aos';
-			AOS.init();
+			import { myAosInit } from '../utils/aos';
+			myAosInit();
+			document.addEventListener("astro:after-swap", myAosInit);
 		</script>
 	</body>
 </html>

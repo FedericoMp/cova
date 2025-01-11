@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPassport from "../../public/images/hero-passport.webp"
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import FloatBtnContact from '../components/FloatBtnContact.astro';
 import Wip from '../components/Wip.astro';
-import HeroPassport from "../../public/images/hero-passport.webp"
 
 const dev = false;
 ---
@@ -21,6 +22,7 @@ const dev = false;
 				</p>
 			</Hero>
 			<Breadcrumb/>
+			<FloatBtnContact msg="Quiero más info del Pasaporte CoVa..."/>
 		</main>
 		: <Wip/> }
 </BaseLayout>

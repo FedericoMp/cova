@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroDestinos from "../../public/images/hero-destinos.webp"
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FeatureDestinies from '../components/FeatureDestinies.astro';
@@ -7,8 +8,8 @@ import FilterDestinies from '../components/FilterDestinies.astro';
 import HalfWidthImg from '../components/HalfWidthImg.astro';
 import Passport from '../components/Passport.astro';
 import Newsletter from '../components/Newsletter.astro';
+import FloatBtnContact from '../components/FloatBtnContact.astro';
 import Wip from '../components/Wip.astro';
-import HeroDestinos from "../../public/images/hero-destinos.webp"
 
 const dev = false;
 ---
@@ -31,6 +32,7 @@ const dev = false;
 			<HalfWidthImg/>
 			<Passport/>
 			<Newsletter/>
+			<FloatBtnContact msg="Quiero info sobre los Destinos..."/>
 		</main>
 		: <Wip/> }
 </BaseLayout>

@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPropietarios from "../../public/images/hero-propietarios.webp"
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Oportunities from '../components/Oportunities.astro';
 import ImageGrid from '../components/ImageGrid.astro';
 import ContactForm from '../components/ContactForm.astro';
+import FloatBtnContact from '../components/FloatBtnContact.astro';
 import Wip from '../components/Wip.astro';
-import HeroPropietarios from "../../public/images/hero-propietarios.webp"
 
 const dev = false;
 ---
@@ -27,6 +28,7 @@ const dev = false;
 			<Oportunities/>
 			<ImageGrid/>
 			<ContactForm/>
+			<FloatBtnContact msg="Me quiero unir al marketplace como Propietario..."/>
 		</main>
 		: <Wip/> }
 </BaseLayout>

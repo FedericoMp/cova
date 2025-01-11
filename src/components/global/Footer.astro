@@ -2,6 +2,7 @@
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 import { getActualYear } from "../../utils/date";
+import { mail, tel, telLink, social } from '../../data/contact.json'
 ---
 
 <footer>
@@ -13,22 +14,22 @@ import { getActualYear } from "../../utils/date";
 				</a>
 			</div>
 			<!-- Contacto -->
-			<div class="col-sm-6 col-md-4">
+			<div class="ms-3 ms-sm-0 col-sm-6 col-md-4">
 			  <h5>Contacto</h5>
 			  <ul class="nav flex-column">
 				<li class="nav-item mb-2">
-				  <a href="mailto:covacationsclub@mail.com" class="nav-link p-0">covacationsclub@mail.com</a>
+				  <a href=`mailto:${mail}` class="nav-link p-0">{mail}</a>
 				</li>
 				<li class="nav-item mb-2">
-				  <a href="https://wa.me/+5491138605464" class="nav-link p-0">+549 11-3860-5464</a>
+				  <a href=`https://wa.me/${telLink}` class="nav-link p-0">{tel}</a>
 				</li>
 			  </ul>
 			  <!-- Redes -->
 				<ul class="list-unstyled d-flex">
-					<li class="">
+					<li class="ms-0">
 						<a
 							class="link-body-emphasis"
-							href="https://www.facebook.com/covacations/?locale=es_LA"
+							href={social.facebook}
 							target="_blank"
 						>
 							<svg
@@ -45,7 +46,7 @@ import { getActualYear } from "../../utils/date";
 					<li class="ms-3">
 						<a
 							class="link-body-emphasis"
-							href="https://www.instagram.com/covacationsclub/?hl=es"
+							href={social.instagram}
 							target="_blank"
 						>
 							<svg
@@ -62,7 +63,7 @@ import { getActualYear } from "../../utils/date";
 					<li class="ms-3">
 						<a
 							class="link-body-emphasis"
-							href="https://ar.linkedin.com/in/covacationsgroup"
+							href={social.linkedin}
 							target="_blank"
 						>
 							<svg
@@ -79,7 +80,7 @@ import { getActualYear } from "../../utils/date";
 					<li class="ms-3">
 						<a
 							class="link-body-emphasis"
-							href="https://www.youtube.com/channel/UCDAq0NOUPn2-FUez-lFz8bA/featured"
+							href={social.youtube}
 							target="_blank"
 						>
 							<svg
@@ -96,7 +97,7 @@ import { getActualYear } from "../../utils/date";
 				</ul>
 			</div>
 			<!-- Sitemap -->
-			<div class="mt-4 mt-sm-0 col-sm-4 offset-sm-2 col-md-2 offset-md-1">
+			<div class="ms-3 ms-sm-0 mt-4 mt-sm-0 col-sm-4 offset-sm-2 col-md-2 offset-md-1">
 			  <h5>Sitemap</h5>
 			  <ul class="nav flex-column">
 				<li class="nav-item mb-2">

@@ -8,7 +8,7 @@ interface Props {
 const { title, link, bgImg } = Astro.props;
 ---
 
-<a href={link} class="text-decoration-none card-link">
+<a href={link} class="text-decoration-none card-link" target="_blank" rel="noopener noreferrer">
     <div class="border-0 overflow-hidden position-relative card p-3 feature-dest-card feature-bg-1 d-flex flex-column justify-content-end" style={`background-image: url(${bgImg});`}>
         <button class="btn rounded-pill z-1 link text-white d-flex justify-content-center align-items-center">
             <svg

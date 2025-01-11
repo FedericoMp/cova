@@ -10,7 +10,7 @@ interface Props {
 const { img, rate, title, location, link } = Astro.props;
 ---
 
-<a href={link} class="text-decoration-none">
+<a href={link} class="text-decoration-none" target="_blank" rel="noopener noreferrer">
     <div class="card border-0 bg-transparent">
         <img
             src={img}

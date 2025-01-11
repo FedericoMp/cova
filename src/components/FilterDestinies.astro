@@ -89,7 +89,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}
@@ -111,7 +111,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}
@@ -133,7 +133,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}

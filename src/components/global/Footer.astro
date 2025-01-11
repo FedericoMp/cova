@@ -1,6 +1,7 @@
 ---
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
+import { getActualYear } from "../../utils/date";
 ---
 
 <footer>
@@ -70,7 +71,7 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 		<div
 			class="d-flex flex-column flex-sm-row justify-content-between pb-0 my-4 pt-5 border-top border-dark-subtle"
 		>
-			<p class="text-md-start text-center">© 2024 CoVacations Group.</p>
+			<p class="text-md-start text-center">© {getActualYear()} CoVacations Group.</p>
 			<ul class="list-unstyled d-flex justify-content-center">
 				<li class="ms-3">
 					<a

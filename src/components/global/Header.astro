@@ -5,6 +5,7 @@ interface Props {
 const { blackBg } = Astro.props;
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
+import { getActualYear } from "../../utils/date";
 ---
 
 <header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
@@ -72,7 +73,7 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
                     </ul>
                 </div>
                 <div class="offcanvas-footer">
-                    <p class="px-4 text-secondary">© 2024 CoVacations Group.</p>
+                    <p class="px-4 text-secondary">© {getActualYear()} CoVacations Group.</p>
                 </div>
             </div>
         </div>

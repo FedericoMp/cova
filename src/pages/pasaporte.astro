@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroPassport from "../../public/images/hero-passport.webp"
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import PassCategory from '../components/PassCategory.astro';
 import FloatBtnContact from '../components/FloatBtnContact.astro';
 import Wip from '../components/Wip.astro';
 
@@ -22,6 +23,7 @@ const dev = false;
 				</p>
 			</Hero>
 			<Breadcrumb/>
+			<PassCategory/>
 			<FloatBtnContact msg="Quiero más info del Pasaporte CoVa..."/>
 		</main>
 		: <Wip/> }

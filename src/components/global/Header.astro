@@ -9,7 +9,7 @@ import { getActualYear } from "../../utils/date";
 import { company } from '../../data/contact.json'
 ---
 
-<header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
+<header class:list={["w-100 position-absolute top-0 z-3", {'linear-black-bg': blackBg}]}>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/cova/">
@@ -87,6 +87,10 @@ import { company } from '../../data/contact.json'
     }
     header.black-bg {
         background-color: var(--black);
+    }
+    header.linear-black-bg {
+        /*background: linear-gradient(180deg, black 10%, transparent) */
+        background: linear-gradient(0deg, #00000000, #000 90%);
     }
     header .navbar {
         min-height: 3rem;

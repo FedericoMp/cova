@@ -39,13 +39,13 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
                             return (
                                 <div class:list={["carousel-item w-100 h-100", {"active": i === 0}]}>
                                     <img class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                                        src={slImg.src} alt="CoVacations Group"/>
+                                        src={slImg.src} alt="CoVacations Group" loading="lazy"/>
                                 </div>
                             )
                         })
                     :   <div class="carousel-item w-100 h-100 active">
                             <img class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                                src={bgImg ? bgImg : HeroHomeImg1.src} alt="CoVacations Group"/>
+                                src={bgImg ? bgImg : HeroHomeImg1.src} alt="CoVacations Group" loading="lazy"/>
                         </div> 
             }
 		</div>

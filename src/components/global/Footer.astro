@@ -17,9 +17,10 @@ import { mail, tel, telLink, social } from '../../data/contact.json'
 			<div class="ms-3 ms-sm-0 col-sm-6 col-md-4">
 			  <h5>Contacto</h5>
 			  <ul class="nav flex-column">
-				<li class="nav-item mb-2">
-				  <a href=`mailto:${mail}` class="nav-link p-0">{mail}</a>
-				</li>
+				{mail && <li class="nav-item mb-2">
+					<a href=`mailto:${mail}` class="nav-link p-0">{mail}</a>
+				</li> }
+				<li class="nav-item mb-2 opacity-75">Solicitá más info</li>
 				<li class="nav-item mb-2">
 				  <a href=`https://wa.me/${telLink}` class="nav-link p-0">{tel}</a>
 				</li>

@@ -32,6 +32,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 			class="nav nav-pills mt-4 mb-5 justify-content-center"
 			id="pills-tab"
 			role="tablist"
+			 data-aos="fade-up"
 		>
 			<li class="nav-item mx-1" role="presentation">
 				<button
@@ -71,7 +72,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 			</li>
 		</ul>
 		<!-- Filter content -->
-		<div class="tab-content mb-md-5" id="pills-tabContent">
+		<div class="tab-content mb-md-5" id="pills-tabContent" data-aos="fade-up" data-aos-delay="300">
 			<div
 				class="tab-pane fade show active"
 				id="pills-all"
@@ -88,7 +89,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}
@@ -110,7 +111,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}
@@ -132,7 +133,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 									rate={d.data.rate} 
 									title={d.data.title} 
 									location={d.data.locationMin} 
-									link={`/cova/destino/${d.data.slug}`}/>
+									link={d.data.pageLink}/>
 							</div>
 						)
 					})}

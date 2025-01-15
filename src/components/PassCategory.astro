@@ -1,0 +1,105 @@
+---
+import UnderlineWord from "./UnderlineWord.astro";
+import CuotaSimpleSvg from "../../public/images/cuotasimple.svg";
+import { telLink } from '../data/contact.json'
+---
+
+<section class="passport-category position-relative z-1">
+    <div class="container px-4 py-5">
+        <div data-aos="fade-up">
+            <h2 class="pb-4 font-poppins position-relative title-underline">
+                <UnderlineWord word="Visitá" />
+                los destinos y complejos
+            </h2>
+            <p class="w50 my-4">
+                Te presentamos <span class="font-inter-bold">Pasaporte CoVa</span>, una forma diferente de adquirir tus próximas vacaciones y experiencias de manera anticipada
+            </p>
+        </div>
+        <div class="row mt-3 mb-4 g-3">
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card card-promo mx-lg-4 bg-dark text-light promo-premium position-relative overflow-hidden">
+                    <div class="card-body z-1">
+                        <h3 class="card-title mt-5">Pack Premium</h3>
+                        <span class="badge mb-3">*Usálo cuando quieras</span>
+                        <p class="card-text mt-5 mb-0">14 Noches</p>
+                        <p class="card-text">$3.000.000</p>
+                        <a href=`https://wa.me/${telLink}?text=Quiero%20consultar%20sobre%20el%20Pack%20Premium...` target="_blank" rel="noopener noreferrer" class="btn link-premium mb-3 w-100">Consultar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="card card-promo mx-lg-4 position-relative overflow-hidden">
+                    <div class="card-body z-1">
+                        <h3 class="card-title mt-5">Pack Classic</h3>
+                        <span class="badge mb-3">**Ver períodos de uso</span>
+                        <p class="card-text mt-5 mb-0">10 Noches por $590.000</p>
+                        <p class="card-text">20 noches por $980.000</p>
+                        <a href=`https://wa.me/${telLink}?text=Quiero%20consultar%20sobre%20el%20Pack%20Classic...` target="_blank" rel="noopener noreferrer" class="btn link mb-3 w-100">Consultar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="900">
+                <div class="card-body">
+                    <h4 class="mt-5 mb-4 font-poppins position-relative title-underline">
+                        Condiciones y formas de uso
+                    </h4>
+                    <div class="row mb-5">
+                        <div class="col-12 col-md-6">
+                            <p class="card-text"><span class="fw-bold">*Período de uso:</span> 365 días desde la fecha de compra. Fecha límite de compra: 30.06.2024.</p>
+                            <p class="card-text"><span class="fw-bold">Formas de pago:</span> formas de pago: se toman pagos en USD (tipo de cambio promedio dólar blue) / transferencia bancaria / Tarjeta de crédito en 1 pago con 5% de recargo / Tarjeta de crédito en 3 y 6 cuotas (tasas de recargo vigentes al momento de compra).</p>
+                            <p class="card-text"><span class="fw-bold">¿Cuántas personas?:</span> 2 ambientes hasta 4 pasajeros (consulte por unidades con disponibilidad de más de 4 pasajeros).</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="card-text"><span class="fw-bold">***Restricciones:</span> NO es válido para usar desde el 15/12/2024 al 28/02/2025, fin de semana largos; semana santa; vacaciones de invierno y desde el 01/07/2024 al 30/09/2024 (Cerro Catedral, Bariloche)</p>
+                            <p class="card-text"><span class="fw-bold">¿Cómo se usa?:</span> Podrá usar como máximo 7 noches de forma consecutiva en cada complejo. El mínimo de noches estará sujeto a la cantidad de noches mínima solicitado por cada complejo.</p>
+                            <p class="card-text"><span class="fw-bold">Para reservar:</span> puede pedir su estadía en cada complejo desde los 30 días previos al check in.</p>
+                        </div>
+                    </div> 
+                </div>
+                <img src={CuotaSimpleSvg.src} alt="Pasaporte CoVacation - Cuota Simple" class="img-fluid opacity-50 cuota-simple-svg"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .passport-category .card-promo {
+        border-color: var(--lt-orange);
+    }
+    .passport-category .card-promo.promo-premium {
+        border-color: var(--st-orange);
+    }
+    .passport-category .card-promo::before {
+        top: 0;
+        left: 0;
+        content: '';
+        z-index: 0;
+        opacity: .5;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        background-color: var(--lt-grey);
+    }
+    .passport-category .card-promo.promo-premium::before {
+        background-color: rgb(251 251 251 / 8%);
+    }
+    .passport-category .card-promo .badge {
+        font-weight: normal;
+        color: var(--orange);
+        background-color: transparent;
+        border: 1px solid var(--orange);
+    }
+    .passport-category .card-promo a.link {
+        color: var(--orange);
+        text-decoration: none;
+        border: 1px solid var(--orange);
+    }
+    .passport-category .card-promo.promo-premium a.link-premium {
+        color: var(--white);
+        text-decoration: none;
+        background-color: var(--st-orange);
+    }
+    .passport-category img.cuota-simple-svg {
+        height: 50px;
+    }
+</style>

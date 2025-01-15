@@ -5,9 +5,11 @@ interface Props {
 const { blackBg } = Astro.props;
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
+import { getActualYear } from "../../utils/date";
+import { company } from '../../data/contact.json'
 ---
 
-<header class:list={["w-100 position-absolute top-0 z-3", {'black-bg': blackBg}]}>
+<header class:list={["w-100 position-absolute top-0 z-3", {'linear-black-bg': blackBg}]}>
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/cova/">
@@ -45,9 +47,9 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
                 <div class="offcanvas-body p-0">
                     <p class="text-secondary p-3">Explorá las secciones para comenzar con tu experiencia</p>
                     <ul class="navbar-nav justify-content-end flex-grow-1">
-                        <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>
+                        <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>
                             <a class="px-4 nav-link" aria-current="page" href="/cova/">
-                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/")}]}>Inicio</h5>
+                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>Inicio</h5>
                                 <p class="px-3 mb-2 text-secondary">¿Quiénes somos y qué ofrecemos?</p>
                             </a>
                         </li>
@@ -63,10 +65,16 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
                                 <p class="px-3 mb-2 text-secondary">Sumá tu alojamiento</p>
                             </a>
                         </li>
+                        <li class:list={["nav-item position-relative border-bottom passport-item", {active: (currentPath === "cova/pasaporte/")}]}>
+                            <a class="px-4 nav-link passport-item" aria-current="page" href="/cova/pasaporte/">
+                                <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "pasaporte/")}]}>Pasaporte CoVa</h5>
+                                <p class="px-3 mb-2 text-secondary">Promociones y beneficios</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="offcanvas-footer">
-                    <p class="px-4 text-secondary">© 2024 CoVacations Group.</p>
+                    <p class="px-4 text-secondary">© {getActualYear()} {company}.</p>
                 </div>
             </div>
         </div>
@@ -79,6 +87,10 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
     }
     header.black-bg {
         background-color: var(--black);
+    }
+    header.linear-black-bg {
+        /*background: linear-gradient(180deg, black 10%, transparent) */
+        background: linear-gradient(0deg, #00000000, #000 90%);
     }
     header .navbar {
         min-height: 3rem;
@@ -113,6 +125,13 @@ import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
     }
     header .navbar .offcanvas .offcanvas-body ul.navbar-nav a:hover {
         background-color: var(--lt-green);
+    }
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav .nav-item.passport-item.active,
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav a.passport-item:hover {
+        background-color: var(--lt-orange);
+    }
+    header .navbar .offcanvas .offcanvas-body ul.navbar-nav .nav-item.passport-item.active::before {
+        background-color: var(--orange);
     }
     .offcanvas-footer p {
         font-size: smaller;

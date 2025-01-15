@@ -1,10 +1,9 @@
 ---
 interface Props {
-    isDestiny?: boolean;
     destinyTitle?: string;
 }
 const currentPath = (Astro.url.pathname).slice(1).replaceAll("/","");
-const { isDestiny, destinyTitle } = Astro.props;
+const { destinyTitle } = Astro.props;
 ---
 
 <div class="container pt-5">
@@ -15,14 +14,8 @@ const { isDestiny, destinyTitle } = Astro.props;
                     CoVacations
                 </a>
             </li>
-            { isDestiny &&
-                <li class="breadcrumb-item active text-capitalize">
-                    <a href="/cova/destinos" class="font-inter-bold breadcrum-link link-underline link-underline-opacity-0">
-                        Destinos
-                    </a>
-                </li> }
             <li class="breadcrumb-item active text-capitalize" aria-current="page">
-                {isDestiny ? (destinyTitle) : (currentPath.replace("cova",""))}
+                {(currentPath.replace("cova",""))}
             </li>
         </ol>
     </nav>

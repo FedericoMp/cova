@@ -1,8 +1,11 @@
-<div class="newsletter position-relative overflow-hidden d-flex align-items-center justify-content-center rounded-top">
+---
+import { telLink } from '../data/contact.json'
+---
+<div class="newsletter position-relative overflow-hidden d-flex align-items-center justify-content-center">
     <div class="container-960 d-flex flex-column align-items-center text-white py-5 px-4 z-1 text-center">
         <h2 class="display-6 w75">Enterate de las <span class="font-inter-bold">novedades y noticias</span></h2>
         <p class="w75 my-4">Para conocer nuevos destinos, ofertas exclusivas y mucho más, completá algunos datos útiles y suscribite a nuestro newsletter.</p>
-        <a href="https://forms.gle/5emqtDLfAxPBnyEB7" target="_blank" rel="noopener noreferrer" class="link btn">
+        <a href=`https://wa.me/${telLink}?text=Quisiera%20novedades,%20promociones%20y%20noticias...` target="_blank" rel="noopener noreferrer" class="link btn">
             Solicitar info
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -30,7 +33,7 @@
         background-color: #000000ba;
     }
     .newsletter a.link {
-        opacity: 0.8;
+        /* opacity: 0.8; */
         width: fit-content;
         text-decoration: none;
         background-color: var(--st-orange);
@@ -38,11 +41,11 @@
     }
     .newsletter a.link:hover,
     .newsletter a.link:hover .chevron {
-        opacity: 1;
+        opacity: .9;
     }
     .newsletter a.link .chevron {
         width: 1rem;
-        opacity: .8;
+        /* opacity: .8; */
         stroke: var(--white);
     }
 </style>

@@ -2,7 +2,8 @@
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 import { getActualYear } from "../../utils/date";
-import { mail, tel, telLink, social } from '../../data/contact.json'
+import { mail, tel, social } from '../../data/contact.json';
+import { linkMsg } from '../../utils/wp';
 ---
 
 <footer>
@@ -22,7 +23,7 @@ import { mail, tel, telLink, social } from '../../data/contact.json'
 				</li> }
 				<li class="nav-item mb-2 opacity-75">Solicitá más info</li>
 				<li class="nav-item mb-2">
-				  <a href=`https://wa.me/${telLink}` class="nav-link p-0">{tel}</a>
+				  <a href=`${linkMsg("Quisiera consultar sobre...")}` class="nav-link p-0">{tel}</a>
 				</li>
 			  </ul>
 			  <!-- Redes -->

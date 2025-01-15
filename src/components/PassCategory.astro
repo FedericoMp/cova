@@ -1,7 +1,7 @@
 ---
 import UnderlineWord from "./UnderlineWord.astro";
 import CuotaSimpleSvg from "../../public/images/cuotasimple.svg";
-import { telLink } from '../data/contact.json'
+import { linkMsg } from '../utils/wp';
 ---
 
 <section class="passport-category position-relative z-1">
@@ -23,7 +23,7 @@ import { telLink } from '../data/contact.json'
                         <span class="badge mb-3">*Usálo cuando quieras</span>
                         <p class="card-text mt-5 mb-0">14 Noches</p>
                         <p class="card-text">$3.000.000</p>
-                        <a href=`https://wa.me/${telLink}?text=Quiero%20consultar%20sobre%20el%20Pack%20Premium...` target="_blank" rel="noopener noreferrer" class="btn link-premium mb-3 w-100">Consultar</a>
+                        <a href=`${linkMsg("Quiero consultar sobre el Pack Premium...")}` target="_blank" rel="noopener noreferrer" class="btn link-premium mb-3 w-100">Consultar</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@ import { telLink } from '../data/contact.json'
                         <span class="badge mb-3">**Ver períodos de uso</span>
                         <p class="card-text mt-5 mb-0">10 Noches por $590.000</p>
                         <p class="card-text">20 noches por $980.000</p>
-                        <a href=`https://wa.me/${telLink}?text=Quiero%20consultar%20sobre%20el%20Pack%20Classic...` target="_blank" rel="noopener noreferrer" class="btn link mb-3 w-100">Consultar</a>
+                        <a href=`${linkMsg("Quiero consultar sobre el Pack Classic...")}` target="_blank" rel="noopener noreferrer" class="btn link mb-3 w-100">Consultar</a>
                     </div>
                 </div>
             </div>

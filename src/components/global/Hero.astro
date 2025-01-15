@@ -20,6 +20,7 @@ import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
 import HeroHomeImg4 from "../../../public/images/hero-home-4.webp"
 import HeroHomeImg5 from "../../../public/images/hero-home-5.webp"
 const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
+import { Image } from 'astro:assets';
 ---
 
 <section
@@ -37,21 +38,24 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
                 hasSlider 
                     ?  sliderArr.map((slImg, i) => {
                             return (
-                                <div class:list={["carousel-item w-100 h-100", {"active": i === 0}]}>
-                                    <img class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                                        src={slImg.src} alt="CoVacations Group" loading="lazy"/>
+                                <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
+                                    <Image class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
+                                        src={slImg} alt="CoVacations Group"/>
                                 </div>
                             )
                         })
-                    :   <div class="carousel-item w-100 h-100 active">
-                            <img class="d-block w-100 h-100 object-fit-cover rounded-bottom"
-                                src={bgImg ? bgImg : HeroHomeImg1.src} alt="CoVacations Group" loading="lazy"/>
+                    :   <div class="carousel-item position-relative w-100 h-100 active">
+                            { bgImg
+                                ? <img class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
+                                src={bgImg} alt="CoVacations Group"/>
+                                : <Image class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
+                                src={HeroHomeImg1} alt="CoVacations Group"/> }
                         </div> 
             }
 		</div>
 	</div>
 	<!-- Content -->
-	<div class="container d-flex align-items-center z-1 position-relative">
+	<div class="container d-flex align-items-center z-2 position-relative">
         <!-- Text -->
 		<div class="hero-content flex-fill text-white px-2">
             <!-- Text content -->
@@ -86,6 +90,15 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
     }
     .hero .hero-content .hero-text {
         max-width: 30rem;
+    }
+    .hero .hero-slider.carousel .carousel-inner .carousel-item.active::after {
+        top: 0;
+        z-index: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: linear-gradient(to right bottom, #052d37, #00515b, #007777, #00a087, #00c88b);
     }
 </style>
 

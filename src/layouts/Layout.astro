@@ -2,9 +2,10 @@
 interface Props {
 	title: string;
 	headerBlackBg?: boolean;
+	headerFixedTop?: boolean;
 }
 
-const { title, headerBlackBg } = Astro.props;
+const { title, headerBlackBg, headerFixedTop } = Astro.props;
 import { ViewTransitions } from 'astro:transitions';
 
 // Supports weights 100-900
@@ -34,7 +35,7 @@ import 'aos/dist/aos.css'
 		<ViewTransitions />
 	</head>
 	<body>
-		<Header blackBg={headerBlackBg}/>
+		<Header blackBg={headerBlackBg} headerFixedTop={headerFixedTop}/>
 			<slot />
 		<Footer/>
 		<script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

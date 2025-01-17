@@ -13,7 +13,7 @@ import Wip from '../components/Wip.astro';
 const dev = false;
 ---
 
-<BaseLayout title="CoVacations - Destinos" headerBlackBg={false}>
+<BaseLayout title="CoVacations - Destinos" headerBlackBg={false} headerFixedTop={true}>
 	{ !dev ?
 		<main>
 			<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg={HeroDestinos.src} hasBgGradient={true}>

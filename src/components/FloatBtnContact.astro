@@ -49,7 +49,7 @@ import { linkMsg } from '../utils/wp'
         const btnMsg = document.getElementById("btnMsg");
         const scrollTop = 15;
         const showHide = false;
-        window.onscroll = () => showHide ? scrollShowAndHide() : scrollShowOnce();
+        window.addEventListener('scroll', () => showHide ? scrollShowAndHide() : scrollShowOnce());
         const scrollShowAndHide = () => btnMsg.style.opacity = (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop) ? 1 : 0;
         const scrollShowOnce = () => btnMsg.style.opacity = (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop) && 1;
     })

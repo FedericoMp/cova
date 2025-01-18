@@ -1,34 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroPropietarios from "../../public/images/hero-propietarios.webp"
+import HeroPropietarios from "../../public/images/hero/hero-propietarios.webp"
 import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Oportunities from '../components/Oportunities.astro';
 import ImageGrid from '../components/ImageGrid.astro';
 import ContactForm from '../components/ContactForm.astro';
 import FloatBtnContact from '../components/FloatBtnContact.astro';
-import Wip from '../components/Wip.astro';
-
-const dev = false;
 ---
 
-<BaseLayout title="CoVacations - Propietarios" headerBlackBg={true}>
-	{ !dev ?
-		<main>
-			<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg={HeroPropietarios.src} hasBgGradient={true}>
-				<h1 class="hero-title display-4 text-shadow-3">
-					Impulsá tu <span class="font-poppins-bold"
-						>alojamiento</span>
-				</h1>
-				<p class="hero-text w50 mt-3 fs-5 text-shadow-3">
-					Formá parte de nuestro marketplace que conecta establecimientos y experiencias.
-				</p>
-			</Hero>
-			<Breadcrumb/>
-			<Oportunities/>
-			<ImageGrid/>
-			<ContactForm/>
-			<FloatBtnContact msg="Me quiero unir al marketplace como Propietario..."/>
-		</main>
-		: <Wip/> }
+<BaseLayout title="CoVacations - Propietarios" headerBlackBg={false} headerFixedTop={true}>
+	<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg={HeroPropietarios.src} hasBgGradient={true}>
+		<h1 class="hero-title display-4 text-shadow-3">
+			Impulsá tu <span class="font-poppins-bold"
+				>alojamiento</span>
+		</h1>
+		<p class="hero-text w50 mt-3 fs-5 text-shadow-3">
+			Formá parte de nuestro marketplace que conecta establecimientos y experiencias.
+		</p>
+	</Hero>
+	<Breadcrumb/>
+	<Oportunities/>
+	<ImageGrid/>
+	<ContactForm/>
+	<FloatBtnContact msg="Me quiero unir al marketplace como Propietario..."/>
 </BaseLayout>

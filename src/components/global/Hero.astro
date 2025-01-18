@@ -14,11 +14,11 @@ import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
-import HeroHomeImg1 from "../../../public/images/hero-home-1.webp"
-import HeroHomeImg2 from "../../../public/images/hero-home-2.webp"
-import HeroHomeImg3 from "../../../public/images/hero-home-3.webp"
-import HeroHomeImg4 from "../../../public/images/hero-home-4.webp"
-import HeroHomeImg5 from "../../../public/images/hero-home-5.webp"
+import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.webp"
+import HeroHomeImg2 from "../../../public/images/hero/hero-home-2.webp"
+import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.webp"
+import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.webp"
+import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.webp"
 const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
 import { Image } from 'astro:assets';
 ---
@@ -83,7 +83,7 @@ import { Image } from 'astro:assets';
 		background-color: #00000066;
 	}
     .hero .bg-color-gradient {
-        backdrop-filter: blur(1.5px);
+        /* backdrop-filter: blur(1.5px); */
         /* background: linear-gradient(320deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 40%) 100%); */
         /* background: linear-gradient(0deg, rgb(0 0 0 / 0%) 20%, rgb(0 0 0 / 50%) 100%); */
         background: linear-gradient(318deg, #00000000, #000000e0);
@@ -91,7 +91,7 @@ import { Image } from 'astro:assets';
     .hero .hero-content .hero-text {
         max-width: 30rem;
     }
-    .hero .hero-slider.carousel .carousel-inner .carousel-item.active::after {
+    .hero .hero-slider.carousel .carousel-inner .carousel-item {
         top: 0;
         z-index: 0;
         content: '';
@@ -105,8 +105,8 @@ import { Image } from 'astro:assets';
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
         const myCarouselElement = document.querySelector('#myCarousel')
-        const carousel = new bootstrap.Carousel(myCarouselElement, {
-            interval: 4000,
+        new bootstrap.Carousel(myCarouselElement, {
+            interval: 5000,
             touch: false
         })
     }); 

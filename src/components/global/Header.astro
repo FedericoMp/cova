@@ -1,15 +1,16 @@
 ---
 interface Props {
     blackBg?: boolean;
+    headerFixedTop?: boolean;
 }
-const { blackBg } = Astro.props;
+const { blackBg, headerFixedTop } = Astro.props;
 const currentPath = (Astro.url.pathname).slice(1).trim();
 import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
 import { getActualYear } from "../../utils/date";
 import { company } from '../../data/contact.json'
 ---
 
-<header class:list={["w-100 position-absolute top-0 z-3", {'linear-black-bg': blackBg}]}>
+<header class:list={["w-100 top-0 z-3", {'linear-black-bg': blackBg}, {'position-fixed': headerFixedTop}, {'position-absolute': !headerFixedTop}]} id="headerTop">
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="/cova/">
@@ -84,6 +85,7 @@ import { company } from '../../data/contact.json'
 <style>
     header {
         background-color: transparent;
+        transition: all 0.2s ease-in-out;
     }
     header.black-bg {
         background-color: var(--black);
@@ -138,3 +140,17 @@ import { company } from '../../data/contact.json'
         font-size: smaller;
     }
 </style>
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        const headerFixedTop = document.getElementById("headerTop");
+        const scrollTop = 15;
+        window.addEventListener('scroll', () => {
+            if(headerFixedTop) {
+                (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop)
+                    ? headerFixedTop.classList.add("black-bg")
+                    : headerFixedTop.classList.remove("black-bg");
+            }
+        })
+    })
+</script>

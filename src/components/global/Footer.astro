@@ -7,7 +7,7 @@ import { linkMsg } from '../../utils/wp';
 ---
 
 <footer>
-	<section class="container px-4 py-5">
+	<section class="container px-4 py-5 position-relative">
 		<div class="row pb-4">
 			<div class="col-sm-12 col-md-5 d-flex justify-content-center justify-content-md-start">
 			  	<a class="w-auto mb-5 mb-lg-0 px-0 link-body-emphasis text-decoration-none" href="/cova/">
@@ -122,6 +122,11 @@ import { linkMsg } from '../../utils/wp';
 		<div class="border-top d-flex justify-content-center justify-content-md-start">
 			<p class="mt-4 opacity-75">© {getActualYear()} CoVacations Group.</p>
 		</div>
+		<button class="rounded-circle position-absolute btn btn-dark gotop-btn" type="button" id="gotopBtn">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="gotop">
+				<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
+			  </svg>			  
+		</button>
 	</section>
 </footer>
 
@@ -167,4 +172,26 @@ import { linkMsg } from '../../utils/wp';
 		opacity: 1;
 		fill: var(--green);
 	}
+	footer button#gotopBtn {
+		top: -1rem;
+		right: 2.5%;
+	}
+	footer button#gotopBtn:focus {
+		outline: none!important;
+		box-shadow: none!important;
+	}
+	footer button#gotopBtn svg.gotop {
+		width: 1.25rem;
+    	height: 2rem;
+	}
 </style>
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+		const btnGotop = document.getElementById("gotopBtn");
+		btnGotop.addEventListener('click', () => {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		});
+	})
+</script>

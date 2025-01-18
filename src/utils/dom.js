@@ -1,3 +1,8 @@
+function notifyEl(el) {
+    el.style.backgroundColor = "#ff000087";
+    console.log('⚠️ Check this!', el)
+}
+
 export function elSizeCheck() {
     // retrieve all elements
     const allElements = document.querySelectorAll('*');
@@ -12,5 +17,5 @@ export function elSizeCheck() {
     // print resulting elements
     (!bigElements.length)
         ? console.log('Yaay! All elements fit. 🙌')
-        : bigElements.forEach(el => console.log('⚠️ Check this!', el));
+        : bigElements.forEach(el => notifyEl(el));
 }

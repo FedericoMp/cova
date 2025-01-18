@@ -5,26 +5,19 @@ import Hero from '../components/global/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import PassCategory from '../components/PassCategory.astro';
 import FloatBtnContact from '../components/FloatBtnContact.astro';
-import Wip from '../components/Wip.astro';
-
-const dev = false;
 ---
 
 <BaseLayout title="CoVacations - Pasaporte" headerBlackBg={false} headerFixedTop={true}>
-	{ !dev ?
-		<main>
-			<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg={HeroPassport.src} hasBgGradient={true}>
-				<h1 class="hero-title display-4 text-shadow-3">
-					Las mejores <span class="font-poppins-bold"
-						>Oportunidades</span>
-				</h1>
-				<p class="hero-text w50 mt-3 fs-5 text-shadow-3">
-					Te presentamos diferentes propuestas con promociones y beneficios para tu próximo viaje.
-				</p>
-			</Hero>
-			<Breadcrumb/>
-			<PassCategory/>
-			<FloatBtnContact msg="Quiero más info del Pasaporte CoVa..."/>
-		</main>
-		: <Wip/> }
+	<Hero fullHeight={false} hasSlider={false} hasModal={false} hasCaption={false} hasScroller={false} bgImg={HeroPassport.src} hasBgGradient={true}>
+		<h1 class="hero-title display-4 text-shadow-3">
+			Las mejores <span class="font-poppins-bold"
+				>Oportunidades</span>
+		</h1>
+		<p class="hero-text w50 mt-3 fs-5 text-shadow-3">
+			Te presentamos diferentes propuestas con promociones y beneficios para tu próximo viaje.
+		</p>
+	</Hero>
+	<Breadcrumb/>
+	<PassCategory/>
+	<FloatBtnContact msg="Quiero más info del Pasaporte CoVa..."/>
 </BaseLayout>

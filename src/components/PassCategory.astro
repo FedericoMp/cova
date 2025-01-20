@@ -27,7 +27,7 @@ import { linkMsg } from '../utils/wp';
         </div>
         <div class="row mt-3 mb-4 g-3">
             <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="card card-promo mx-lg-4 bg-dark text-light promo-premium position-relative overflow-hidden">
+                <div class="card card-promo me-lg-3 bg-dark text-light promo-premium position-relative overflow-hidden">
                     <div class="card-body z-1">
                         <h3 class="card-title mt-5">Pack Premium</h3>
                         <span class="badge mb-3">*Usálo cuando quieras</span>
@@ -37,8 +37,8 @@ import { linkMsg } from '../utils/wp';
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                <div class="card card-promo mx-lg-4 position-relative overflow-hidden">
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="card card-promo me-lg-3 position-relative overflow-hidden">
                     <div class="card-body z-1">
                         <h3 class="card-title mt-5">Pack Classic</h3>
                         <span class="badge mb-3">**Ver períodos de uso</span>
@@ -48,7 +48,7 @@ import { linkMsg } from '../utils/wp';
                     </div>
                 </div>
             </div>
-            <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="900">
+            <div class="col-12 mb-5" data-aos="fade-up" data-aos-delay="500">
                 <div class="card-body">
                     <h5 class="mt-5 mb-4 font-poppins opacity-75">
                         Condiciones y formas de uso
@@ -68,7 +68,7 @@ import { linkMsg } from '../utils/wp';
                 </div>
             </div>
 
-            <div class="col-12" data-aos="fade-up" data-aos-delay="900">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
                 <div class="card-body">
                     <div class="row flex-md-row-reverse">
                         <div class="col-12 col-md-6 mb-4 mb-md-0">
@@ -97,6 +97,11 @@ import { linkMsg } from '../utils/wp';
         border-color: var(--st-orange);
         filter: drop-shadow(0 0 15px var(--lt-orange));
     }
+    .passport-category .card-promo:hover,
+    .passport-category .card-promo.promo-premium:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 15px rgb(255 146 67 / 62%));
+    }
     .passport-category .card-promo::before {
         top: 0;
         left: 0;
@@ -106,7 +111,7 @@ import { linkMsg } from '../utils/wp';
         width: 100%;
         height: 50%;
         position: absolute;
-        background-color: var(--lt-grey);
+        background-color: #efefef;
     }
     .passport-category .card-promo.promo-premium::before {
         background-color: rgb(251 251 251 / 8%);

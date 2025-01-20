@@ -6,6 +6,10 @@ interface Props {
 }
 
 const { title, link, bgImg } = Astro.props;
+
+const shortTitle = (title: string) => {
+    return (title === "Costa Atlántica") ? "C. Atlántica" : title;
+}
 ---
 
 <a href={link} class="text-decoration-none card-link" target="_blank" rel="noopener noreferrer">
@@ -22,7 +26,8 @@ const { title, link, bgImg } = Astro.props;
                     d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
                     clip-rule="evenodd"></path>
             </svg>
-            {title}
+            <span class="d-inline d-sm-none">{shortTitle(title)}</span>
+            <span class="d-none d-sm-inline">{title}</span>
         </button>
     </div>
 </a>
@@ -54,8 +59,8 @@ const { title, link, bgImg } = Astro.props;
 		background-color: var(--st-orange);
 	}
 	.card.feature-dest-card button.link svg.map-svg {
-		width: 1rem;
-		height: 1rem;
+		width: .7rem;
+		height: .7rem;
 	}
     @media screen and (max-width: 992px) {
         .card-link .card.feature-dest-card.feature-bg-1,
@@ -64,7 +69,8 @@ const { title, link, bgImg } = Astro.props;
             min-height: 13rem;
         }
         .card-link .card.feature-dest-card button.link {
-            font-size: x-small;
+            font-size: .6rem!important;
+            padding: .25rem .5rem;
         }
     }
 </style>

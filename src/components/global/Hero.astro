@@ -20,7 +20,6 @@ import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.webp"
 import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.webp"
 import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.webp"
 const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
-import { Image } from 'astro:assets';
 ---
 
 <section
@@ -39,17 +38,17 @@ import { Image } from 'astro:assets';
                     ?  sliderArr.map((slImg, i) => {
                             return (
                                 <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
-                                    <Image class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
-                                        src={slImg} alt="CoVacations Group"/>
+                                    <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                        data-src={slImg.src} alt="CoVacations Group"/>
                                 </div>
                             )
                         })
                     :   <div class="carousel-item position-relative w-100 h-100 active">
                             { bgImg
-                                ? <img class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
-                                src={bgImg} alt="CoVacations Group"/>
-                                : <Image class="d-block w-100 h-100 object-fit-cover rounded-bottom position-relative z-1"
-                                src={HeroHomeImg1} alt="CoVacations Group"/> }
+                                ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                data-src={bgImg} alt="CoVacations Group"/>
+                                : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                data-src={HeroHomeImg1.src} alt="CoVacations Group"/> }
                         </div> 
             }
 		</div>
@@ -100,6 +99,16 @@ import { Image } from 'astro:assets';
         position: absolute;
         background-image: linear-gradient(to right bottom, #052d37, #00515b, #007777, #00a087, #00c88b);
     } */
+    .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
+        width: 100%;
+        aspect-ratio: unset;
+    }
+    @media screen and (max-width: 992px) {
+        .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
+            width: fit-content;
+            aspect-ratio: 4 / 3;
+        }
+    }
 </style>
 
 <script is:inline>

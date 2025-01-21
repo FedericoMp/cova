@@ -23,6 +23,9 @@ importers:
       astro:
         specifier: ^4.16.12
         version: 4.16.12(rollup@4.26.0)(typescript@5.6.3)
+      lozad:
+        specifier: ^1.16.0
+        version: 1.16.0
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -33,6 +36,9 @@ importers:
       '@types/aos':
         specifier: ^3.0.7
         version: 3.0.7
+      '@types/lozad':
+        specifier: ^1.16.4
+        version: 1.16.4
 
 packages:
 
@@ -608,6 +614,9 @@ packages:
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
+  '@types/lozad@1.16.4':
+    resolution: {integrity: sha512-SK40Ulbghp1HXkqutSbkDG4Xu2jlM9bK7+Qd6r+H5rQzZSzy4EMXBmoPmQYyQKSRQo/8Zt3TdmUgg367cGO9tQ==}
+
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
 
@@ -1130,6 +1139,9 @@ packages:
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
+
+  lozad@1.16.0:
+    resolution: {integrity: sha512-JBr9WjvEFeKoyim3svo/gsQPTkgG/mOHJmDctZ/+U9H3ymUuvEkqpn8bdQMFsvTMcyRJrdJkLv0bXqGm0sP72w==}
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -2396,6 +2408,8 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  '@types/lozad@1.16.4': {}
+
   '@types/mdast@4.0.4':
     dependencies:
       '@types/unist': 3.0.3
@@ -2998,6 +3012,8 @@ snapshots:
       is-unicode-supported: 1.3.0
 
   longest-streak@3.1.0: {}
+
+  lozad@1.16.0: {}
 
   lru-cache@5.1.1:
     dependencies:

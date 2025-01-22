@@ -32,7 +32,7 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
 		class="hero-slider carousel slide carousel-fade w-100 h-100 position-absolute top-0 z-0"
 		data-bs-ride="carousel" data-bs-pause="false" id="myCarousel"
 	>
-		<div class="carousel-inner w-100 h-100">
+		<div class="carousel-inner w-100 h-100 carousel-inner-fallback">
             { 
                 hasSlider 
                     ?  sliderArr.map((slImg, i) => {
@@ -93,14 +93,19 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
     .hero .hero-content .hero-text {
         max-width: 30rem;
     }
+    .hero .carousel-inner-fallback {
+        background-image: linear-gradient(to right bottom, #052d37, #00515b, #007777, #00a087, #00c88b);
+    }
     .hero #bgFallback {
         opacity: 1;
         transition: all .8s ease .3s;
         background-image: linear-gradient(to right bottom, #052d37, #00515b, #007777, #00a087, #00c88b);
     }
     .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
+        opacity: 0;
         width: 100%;
         aspect-ratio: unset;
+        transition: all .8s ease .3s;
     }
     @media screen and (max-width: 575px) {
         .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
@@ -118,11 +123,13 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
             touch: false
         });
         
+        const respImg = document.querySelector(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
         const bgFallback = document.getElementById("bgFallback");
         setTimeout(() => {
             bgFallback.style.opacity = 0;
+            respImg.style.opacity = 1;
             bgFallback.classList.remove("z-1")
             bgFallback.classList.add("z-n1")
-        }, 300);
+        }, 900);
     }); 
   </script>

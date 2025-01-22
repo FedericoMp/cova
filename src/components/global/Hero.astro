@@ -123,13 +123,15 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
             touch: false
         });
         
-        const respImg = document.querySelector(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
+        const respImgs = document.querySelectorAll(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
         const bgFallback = document.getElementById("bgFallback");
-        setTimeout(() => {
-            bgFallback.style.opacity = 0;
-            respImg.style.opacity = 1;
-            bgFallback.classList.remove("z-1")
-            bgFallback.classList.add("z-n1")
-        }, 900);
+        bgFallback.style.opacity = 0;
+        respImgs.forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.opacity = 1;
+                bgFallback.classList.remove("z-1");
+                bgFallback.classList.add("z-n1");
+            })
+        });
     }); 
   </script>

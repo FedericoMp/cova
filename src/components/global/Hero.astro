@@ -26,7 +26,7 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
 	class:list={["hero w-100 d-flex position-relative", { "full-height": fullHeight }]}
 >
     <!-- Bg overlay options -->
-	<div class:list={["w-100 h-100 position-absolute top-0 z-1", { "bg-opacity": hasBgOpacity }, { "bg-color-gradient": hasBgGradient }]}></div>
+	<div class:list={["w-100 h-100 position-absolute top-0 z-2", { "bg-opacity": hasBgOpacity }, { "bg-color-gradient": hasBgGradient }]}></div>
 	<!-- Slider -->
 	<div
 		class="hero-slider carousel slide carousel-fade w-100 h-100 position-absolute top-0 z-0"
@@ -40,20 +40,22 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
                                 <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
                                     <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
                                         data-src={slImg.src} alt="CoVacations Group" width="1920" height="1080"
-                                        sizes="(max-width: 600px) 100vw, 50vw" />
+                                        sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
                                 </div>
                             )
                         })
                     :   <div class="carousel-item position-relative w-100 h-100 active">
                             { bgImg
                                 ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 600px) 100vw, 50vw"/>
+                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
                                 : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={HeroHomeImg1.src} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 600px) 100vw, 50vw"/> }
+                                data-src={HeroHomeImg1.src} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> }
                         </div> 
             }
 		</div>
 	</div>
+    <!-- Bg Fallback -->
+    <div id="bgFallback" class="bg-fallback w-100 h-100 position-absolute top-0 z-1"></div>
 	<!-- Content -->
 	<div class="container d-flex align-items-center z-2 position-relative">
         <!-- Text -->
@@ -91,20 +93,16 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
     .hero .hero-content .hero-text {
         max-width: 30rem;
     }
-    /* .hero .hero-slider.carousel .carousel-inner .carousel-item {
-        top: 0;
-        z-index: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
+    .hero #bgFallback {
+        opacity: 1;
+        transition: all .8s ease .3s;
         background-image: linear-gradient(to right bottom, #052d37, #00515b, #007777, #00a087, #00c88b);
-    } */
+    }
     .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
         width: 100%;
         aspect-ratio: unset;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 575px) {
         .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
             width: fit-content;
             aspect-ratio: 4 / 3;
@@ -114,10 +112,17 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
 
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
-        const myCarouselElement = document.querySelector('#myCarousel')
+        const myCarouselElement = document.querySelector("#myCarousel");
         new bootstrap.Carousel(myCarouselElement, {
             interval: 5000,
             touch: false
-        })
+        });
+        
+        const bgFallback = document.getElementById("bgFallback");
+        setTimeout(() => {
+            bgFallback.style.opacity = 0;
+            bgFallback.classList.remove("z-1")
+            bgFallback.classList.add("z-n1")
+        }, 300);
     }); 
   </script>

@@ -14,11 +14,11 @@ import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
-import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.jpg"
-import HeroHomeImg2 from "../../../public/images/hero/hero-home-2.jpg"
-import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.jpg"
-import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.jpg"
-import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.jpg"
+import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.webp"
+import HeroHomeImg2 from "../../../public/images/hero/hero-home-2.webp"
+import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.webp"
+import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.webp"
+import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.webp"
 const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
 ---
 
@@ -39,16 +39,17 @@ const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroH
                             return (
                                 <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
                                     <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                        data-src={slImg.src} alt="CoVacations Group"/>
+                                        data-src={slImg.src} alt="CoVacations Group" width="1920" height="1080"
+                                        sizes="(max-width: 600px) 100vw, 50vw" />
                                 </div>
                             )
                         })
                     :   <div class="carousel-item position-relative w-100 h-100 active">
                             { bgImg
                                 ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={bgImg} alt="CoVacations Group"/>
+                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 600px) 100vw, 50vw"/>
                                 : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={HeroHomeImg1.src} alt="CoVacations Group"/> }
+                                data-src={HeroHomeImg1.src} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 600px) 100vw, 50vw"/> }
                         </div> 
             }
 		</div>

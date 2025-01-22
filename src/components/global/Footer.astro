@@ -1,6 +1,6 @@
 ---
 const currentPath = (Astro.url.pathname).slice(1).trim();
-import CovaSvgWhite from "../../../public/images/logo-cova-white.svg";
+import CovaSvgWhite from "../../../public/images/svg/logo-cova-white.svg";
 import { getActualYear } from "../../utils/date";
 import { mail, tel, social } from '../../data/contact.json';
 import { linkMsg } from '../../utils/wp';
@@ -114,7 +114,7 @@ import { linkMsg } from '../../utils/wp';
 		<div class="border-top d-flex justify-content-center justify-content-md-start">
 			<p class="mt-4 opacity-75">© {getActualYear()} CoVacations Group.</p>
 		</div>
-		<button class="rounded-circle position-absolute btn btn-secondary gotop-btn" type="button" id="gotopBtn">
+		<button class="rounded-circle position-fixed btn btn-secondary gotop-btn" type="button" id="gotopBtn">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="gotop">
 				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
 				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
@@ -166,10 +166,14 @@ import { linkMsg } from '../../utils/wp';
 		fill: var(--green);
 	}
 	footer button#gotopBtn {
-		top: -1rem;
-		right: 1rem;
-		animation: pulseGotop 2s infinite;
-		filter: drop-shadow(2px 4px 6px black);
+		opacity: 0;
+		z-index: 100;
+		bottom: 1rem;
+		left: 1rem;
+		filter: brightness(0.95);
+		/* animation: pulseGotop 2s infinite; */
+		transition: opacity .5s ease-in-out;
+		/* filter: drop-shadow(2px 4px 6px black); */
 	}
 	footer button#gotopBtn:focus {
 		outline: none!important;
@@ -192,6 +196,9 @@ import { linkMsg } from '../../utils/wp';
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
 		const btnGotop = document.getElementById("gotopBtn");
+		const scrollTop = 720;
+		window.addEventListener('scroll', () => scrollShowAndHide());
+		const scrollShowAndHide = () => btnGotop.style.opacity = (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop) ? '.7' : 0;
 		btnGotop.addEventListener('click', () => {
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;

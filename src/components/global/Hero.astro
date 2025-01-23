@@ -1,7 +1,6 @@
 ---
 interface Props {
 	fullHeight?: boolean;
-    hasSlider?: boolean;
     hasModal?: boolean;
     hasCaption?: boolean;
     hasScroller?: boolean;
@@ -9,25 +8,11 @@ interface Props {
     hasBgOpacity?: boolean;
     hasBgGradient?: boolean;
 }
-const { fullHeight, hasSlider, hasModal, hasCaption, hasScroller, bgImg, hasBgOpacity, hasBgGradient } = Astro.props;
+const { fullHeight, hasModal, hasCaption, hasScroller, bgImg, hasBgOpacity, hasBgGradient } = Astro.props;
 import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
-// import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.webp"
-// import HeroHomeImg2 from "../../../public/images/hero/hero-home-2.webp"
-// import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.webp"
-// import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.webp"
-// import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.webp"
-// const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
-
-const driveImgs = [
-    "https://drive.google.com/thumbnail?id=1LE_nVMPYT2ZoS3toRM3yYvi4FeADHdel&sz=w1920",
-    "https://drive.google.com/thumbnail?id=1v6wFinCHYBbv8or6Qcx03fU9zo9QgO2e&sz=w1920",
-    "https://drive.google.com/thumbnail?id=1HnYEiY3BESF0MX7BekNV4yxbAy1rHPQP&sz=w1920",
-    "https://drive.google.com/thumbnail?id=1g8zqfIswVQmgYIBi0-jD1vzIukkWlSpq&sz=w1920",
-    "https://drive.google.com/thumbnail?id=1u21Rc0Wk0YC2UsV1McfV-rHbqU8z8kTM&sz=w1920"
-];
 
 ---
 
@@ -41,26 +26,12 @@ const driveImgs = [
 		class="hero-slider carousel slide carousel-fade w-100 h-100 position-absolute top-0 z-0"
 		data-bs-ride="carousel" data-bs-pause="false" id="myCarousel"
 	>
-		<div class="carousel-inner w-100 h-100 carousel-inner-fallback">
-            { 
-                hasSlider 
-                    ?  driveImgs.map((slImg, i) => {
-                            return (
-                                <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
-                                    <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                        data-src={slImg} alt="CoVacations Group" width="1920" height="1080"
-                                        sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
-                                </div>
-                            )
-                        })
-                    :   <div class="carousel-item position-relative w-100 h-100 active">
-                            { bgImg
-                                ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
-                                : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={"https://drive.google.com/thumbnail?id=1LE_nVMPYT2ZoS3toRM3yYvi4FeADHdel&sz=w1920"} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> }
-                        </div> 
-            }
+        <div class="carousel-inner w-100 h-100 carousel-inner-fallback">
+            <div class="carousel-item position-relative w-100 h-100 active">
+            { bgImg ? 
+                <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> : ''}
+            </div> 
 		</div>
 	</div>
     <!-- Bg Fallback -->
@@ -132,15 +103,13 @@ const driveImgs = [
             touch: false
         });
         
-        const respImgs = document.querySelectorAll(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
+        const respImg = document.querySelector(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
         const bgFallback = document.getElementById("bgFallback");
-        bgFallback.style.opacity = 0;
-        respImgs.forEach(img => {
-            img.addEventListener('load', () => {
-                img.style.opacity = 1;
-                bgFallback.classList.remove("z-1");
-                bgFallback.classList.add("z-n1");
-            })
-        });
+        respImg.addEventListener('load', () => {
+            bgFallback.style.opacity = 0;
+            respImg.style.opacity = 1;
+            bgFallback.classList.remove("z-1");
+            bgFallback.classList.add("z-n1");
+        })
     }); 
   </script>

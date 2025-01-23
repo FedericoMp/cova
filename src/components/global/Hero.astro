@@ -14,6 +14,7 @@ import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
+import { Image } from 'astro:assets';
 
 // Local images
 // import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.webp"
@@ -49,18 +50,18 @@ const githubImgs = [
                     ?  githubImgs.map((slImg, i) => {
                             return (
                                 <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
-                                    <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                        data-src={slImg} alt="CoVacations Group" width="1920" height="1080"
+                                    <Image class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                        src={slImg} data-src={slImg} alt="CoVacations Group" width="1920" height="1080"
                                         sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
                                 </div>
                             )
                         })
                     :   <div class="carousel-item position-relative w-100 h-100 active">
                             { bgImg
-                                ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
-                                : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                                data-src={"https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-2.webp"} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> }
+                                ? <Image class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                src={bgImg} data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
+                                : <Image class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                src={"https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-2.webp"} data-src={"https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-2.webp"} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> }
                         </div> 
             }
 		</div>

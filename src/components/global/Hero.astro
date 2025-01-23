@@ -1,6 +1,7 @@
 ---
 interface Props {
 	fullHeight?: boolean;
+    hasSlider?: boolean;
     hasModal?: boolean;
     hasCaption?: boolean;
     hasScroller?: boolean;
@@ -8,11 +9,25 @@ interface Props {
     hasBgOpacity?: boolean;
     hasBgGradient?: boolean;
 }
-const { fullHeight, hasModal, hasCaption, hasScroller, bgImg, hasBgOpacity, hasBgGradient } = Astro.props;
+const { fullHeight, hasSlider, hasModal, hasCaption, hasScroller, bgImg, hasBgOpacity, hasBgGradient } = Astro.props;
 import Modal from "../Modal.astro"
 import ModalBtn from "../ModalBtn.astro"
 import Scroller from "../Scroller.astro"
 import Caption from "../Caption.astro"
+// import HeroHomeImg1 from "../../../public/images/hero/hero-home-1.webp"
+// import HeroHomeImg2 from "../../../public/images/hero/hero-home-2.webp"
+// import HeroHomeImg3 from "../../../public/images/hero/hero-home-3.webp"
+// import HeroHomeImg4 from "../../../public/images/hero/hero-home-4.webp"
+// import HeroHomeImg5 from "../../../public/images/hero/hero-home-5.webp"
+// const sliderArr = [HeroHomeImg1, HeroHomeImg2, HeroHomeImg3, HeroHomeImg4, HeroHomeImg5];
+
+const githubImgs = [
+    "https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-2.webp",
+    "https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-1.webp",
+    "https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-3.webp",
+    "https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-4.webp",
+    "https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-5.webp"
+];
 
 ---
 
@@ -26,12 +41,26 @@ import Caption from "../Caption.astro"
 		class="hero-slider carousel slide carousel-fade w-100 h-100 position-absolute top-0 z-0"
 		data-bs-ride="carousel" data-bs-pause="false" id="myCarousel"
 	>
-        <div class="carousel-inner w-100 h-100 carousel-inner-fallback">
-            <div class="carousel-item position-relative w-100 h-100 active">
-            { bgImg ? 
-                <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
-                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> : ''}
-            </div> 
+		<div class="carousel-inner w-100 h-100 carousel-inner-fallback">
+            { 
+                hasSlider 
+                    ?  githubImgs.map((slImg, i) => {
+                            return (
+                                <div class:list={["carousel-item position-relative w-100 h-100", {"active": i === 0}]}>
+                                    <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                        data-src={slImg} alt="CoVacations Group" width="1920" height="1080"
+                                        sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
+                                </div>
+                            )
+                        })
+                    :   <div class="carousel-item position-relative w-100 h-100 active">
+                            { bgImg
+                                ? <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                data-src={bgImg} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/>
+                                : <img class="lozad d-block h-100 object-fit-cover position-relative z-1 resp-img"
+                                data-src={"https://raw.githubusercontent.com/FedericoMp/cova/refs/heads/main/public/images/hero/hero-home-2.webp"} alt="CoVacations Group" width="1920" height="1080" sizes="(max-width: 576px) 100vw, 50vw" loading="lazy"/> }
+                        </div> 
+            }
 		</div>
 	</div>
     <!-- Bg Fallback -->
@@ -87,6 +116,9 @@ import Caption from "../Caption.astro"
         aspect-ratio: unset;
         transition: all .8s ease .3s;
     }
+    .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img.img-scale {
+        transform: scale(1.1);
+    }
     @media screen and (max-width: 575px) {
         .hero .hero-slider.carousel .carousel-inner .carousel-item img.resp-img {
             width: fit-content;
@@ -103,13 +135,17 @@ import Caption from "../Caption.astro"
             touch: false
         });
         
-        const respImg = document.querySelector(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
+        const respImgs = document.querySelectorAll(".hero>.hero-slider.carousel>.carousel-inner>.carousel-item>img.resp-img");
         const bgFallback = document.getElementById("bgFallback");
-        respImg.addEventListener('load', () => {
-            bgFallback.style.opacity = 0;
-            respImg.style.opacity = 1;
-            bgFallback.classList.remove("z-1");
-            bgFallback.classList.add("z-n1");
-        })
+        bgFallback.style.opacity = 0;
+
+        respImgs.forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.opacity = 1;
+                img.classList.add("img-scale");
+                bgFallback.classList.remove("z-1");
+                bgFallback.classList.add("z-n1");
+            });
+        });
     }); 
   </script>

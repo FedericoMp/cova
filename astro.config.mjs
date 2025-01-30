@@ -3,6 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://federicomp.github.io',
-    base: 'cova',
+    site: 'https://covacations.com.ar',
 });

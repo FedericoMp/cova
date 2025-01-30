@@ -13,7 +13,7 @@ import { company } from '../../data/contact.json'
 <header class:list={["w-100 top-0 z-3", {'linear-black-bg': blackBg}, {'position-fixed': headerFixedTop}, {'position-absolute': !headerFixedTop}]} id="headerTop">
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="/cova/">
+            <a class="navbar-brand" href="https://covacations.com.ar/">
                 <img src={CovaSvgWhite.src} alt="CoVacations" class="logo" />
             </a>
             <button
@@ -49,25 +49,25 @@ import { company } from '../../data/contact.json'
                     <p class="text-secondary p-3">Explorá las secciones para comenzar con tu experiencia</p>
                     <ul class="navbar-nav justify-content-end flex-grow-1">
                         <li class:list={["nav-item position-relative border-top border-bottom", {active: (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/cova/">
+                            <a class="px-4 nav-link" aria-current="page" href="https://covacations.com.ar/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>Inicio</h5>
                                 <p class="px-3 mb-2 text-secondary">¿Quiénes somos y qué ofrecemos?</p>
                             </a>
                         </li>
                         <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "cova/destinos/")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/cova/destinos/">
+                            <a class="px-4 nav-link" aria-current="page" href="https://covacations.com.ar/destinos/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "destinos/")}]}>Destinos</h5>
                                 <p class="px-3 mb-2 text-secondary">Lugares y experiencias inolvidables</p>
                             </a>
                         </li>
                         <li class:list={["nav-item position-relative border-bottom", {active: (currentPath === "cova/propietarios/")}]}>
-                            <a class="px-4 nav-link" aria-current="page" href="/cova/propietarios/">
+                            <a class="px-4 nav-link" aria-current="page" href="https://covacations.com.ar/propietarios/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "propietarios/")}]}>Propietarios</h5>
                                 <p class="px-3 mb-2 text-secondary">Sumá tu alojamiento</p>
                             </a>
                         </li>
                         <li class:list={["nav-item position-relative border-bottom passport-item", {active: (currentPath === "cova/pasaporte/")}]}>
-                            <a class="px-4 nav-link passport-item" aria-current="page" href="/cova/pasaporte/">
+                            <a class="px-4 nav-link passport-item" aria-current="page" href="https://covacations.com.ar/pasaporte/">
                                 <h5 class:list={["my-2",{"text-decoration-underline": (currentPath === "pasaporte/")}]}>Pasaporte CoVa</h5>
                                 <p class="px-3 mb-2 text-secondary">Promociones y beneficios</p>
                             </a>

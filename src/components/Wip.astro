@@ -1,8 +1,16 @@
+---
+interface Props {
+	title?: string;
+	text?: string;
+}
+const { title, text } = Astro.props;
+---
+
 <section class="wip d-flex justify-content-center">
     <div class="container d-flex flex-column justify-content-center align-items-center">
-        <h2>Sección en construcción</h2>
-        <p>Actualmente se puede navegar en la página de <code>/inicio</code></p>
-        <a href="/cova/" class="btn btn-outline-secondary" role="button" >Ir al home</a>
+        <h2 class="w75 mx-auto text-center">{title || "Sección en construcción"}</h2>
+        <p class="w75 mx-auto text-center my-4">{text || `Actualmente se puede navegar en la página de <code>/inicio</code>`}</p>
+        <a href="https://covacations.com.ar/" class="btn btn-lg btn-outline-secondary" role="button" >Ir al home</a>
     </div>
 </section>
 
@@ -11,3 +19,13 @@
         height: 100vh;
     }
 </style>
+
+<script is:inline>
+    const headerFixedTop = document.getElementById("headerTop");
+    document.addEventListener('astro:page-load', () => {
+        headerFixedTop.style.backgroundColor = "#000";
+    })
+    document.addEventListener('astro:after-swap', () => {
+        headerFixedTop.style.backgroundColor = "transparent";
+    })
+</script>

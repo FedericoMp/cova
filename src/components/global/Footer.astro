@@ -95,17 +95,17 @@ import { linkMsg } from '../../utils/wp';
 			  <h5>Sitemap</h5>
 			  <ul class="nav flex-column">
 				<li class="nav-item mb-2">
-				  <a href="/cova/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath !== "cova/destinos/" && currentPath !== "cova/propietarios/" && currentPath !== "cova/pasaporte/")}]}>Inicio</a>
+				  <a href="https://covacations.com.ar/" class:list={["nav-link p-0", {"text-decoration-underline": (!currentPath.includes("destinos") && !currentPath.includes("propietarios") && !currentPath.includes("pasaporte"))}]}>Inicio</a>
 				</li>
 				<li class="nav-item mb-2">
-				  <a href="/cova/destinos/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/destinos/")}]}>Destinos</a>
+				  <a href="https://covacations.com.ar/destinos/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath.includes("destinos"))}]}>Destinos</a>
 				</li>
 				<li class="nav-item mb-2">
-				  <a href="/cova/propietarios/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath === "cova/propietarios/")}]}
+				  <a href="https://covacations.com.ar/propietarios/" class:list={["nav-link p-0", {"text-decoration-underline": (currentPath.includes("propietarios"))}]}
 					>Propietarios</a>
 				</li>
 				<li class="nav-item mb-2">
-				  <a href="/cova/pasaporte/" class:list={["nav-link passport-item p-0", {"text-decoration-underline": (currentPath === "cova/pasaporte/")}]}
+				  <a href="https://covacations.com.ar/pasaporte/" class:list={["nav-link passport-item p-0", {"text-decoration-underline": (currentPath.includes("pasaporte"))}]}
 					>Pasaporte</a>
 				</li>
 			  </ul>

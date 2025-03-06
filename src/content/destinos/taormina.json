@@ -1,0 +1,20 @@
+{
+    "$schema": "../../../.astro/collections/destinos.schema.json",
+    "slug": "taormina",
+    "title": "Taormina Hotel",
+    "images": [
+        {
+            "isFeatured": true,
+            "url": "taormina-localimage",
+            "label": "Taormina Hotel"
+        }
+    ],
+    "rate": "4.1",
+    "description": "Taormina Hotel se encuentra en Ostende, a 4 min a pie de Playa de Ostende, cuenta con 3 estrellas ofrece mostrador de información turística, hay vistas a la ciudad.",
+    "location": "San Martin esquina Sarmiento. Mar de Ostende - Pinamar, Buenos Aires.",
+    "locationMin": "Pinamar, Buenos Aires",
+    "region": "Costa Atlántica",
+    "chords": [],
+    "contactLinks": [],
+    "pageLink": "https://www.instagram.com/taorminapinamar"
+}

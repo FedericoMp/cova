@@ -80,7 +80,7 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 				aria-labelledby="pills-all-tab"
 				tabindex="0"
 			>
-				<div class="row">
+				<div class="row g-3">
 					{ allDestinies.map(d => {
 						return (
 							<div class="col-12 col-sm-6 col-md-4 mb-5 mb-md-0">
@@ -102,10 +102,10 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 				aria-labelledby="pills-playa-tab"
 				tabindex="0"
 			>
-                 <div class="row">
+                 <div class="row g-3">
                     { costaDestinies.map(d => {
 						return (
-							<div class="col-12 col-sm-6 col-md-4">
+							<div class="col-12 col-sm-6 col-md-4 mb-5 mb-md-0">
 								<Card 
 									img={d.data.images[0].url} 
 									rate={d.data.rate} 
@@ -124,10 +124,10 @@ const patagoniaDestinies = await getCollection('destinos', ({data}) => {
 				aria-labelledby="pills-patagonia-tab"
 				tabindex="0"
 			>
-                 <div class="row">
+                 <div class="row g-3">
                     { patagoniaDestinies.map(d => {
 						return (
-							<div class="col-12 col-sm-6 col-md-4">
+							<div class="col-12 col-sm-6 col-md-4 mb-5 mb-md-0">
 								<Card 
 									img={d.data.images[0].url} 
 									rate={d.data.rate} 

@@ -8,12 +8,20 @@ interface Props {
 }
 
 const { img, rate, title, location, link } = Astro.props;
+
+const localimage = img.includes("-localimage");
+// Destiny img
+import taormina from "../../public/images/destiny/taormina.jpg";
+const objDest:any = {
+    "taormina": taormina.src
+}
+const replaceImg = (imgName: any) => objDest[imgName.replace("-localimage","")]
 ---
 
 <a href={link} class="text-decoration-none" target="_blank" rel="noopener noreferrer">
     <div class="card border-0 bg-transparent">
         <img
-            src={img}
+            src={!localimage ? img : replaceImg(img)}
             class="card-img-top rounded"
             alt={title}
         />
@@ -44,7 +52,9 @@ const { img, rate, title, location, link } = Astro.props;
 </a>
 
 <style>
-    .card-img-top {
-        height: 12rem;
+    @media screen and (min-width: 577px) {
+        .card-img-top {
+            height: 12rem;
+        }
     }
 </style>
